@@ -1,2 +1,56 @@
 @import 'tailwindcss';
-@plugin '@tailwindcss/forms';
+@import url('https://fonts.googleapis.com/css2?family=Medula+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* @plugin '@tailwindcss/forms'; */
+
+:root {
+    --color-primary: #313638; /* ash-gray */
+    --color-primary-darker: #272a2b; /* ash-gray */
+    --color-contrast: #ffe596; /* light-wheat */
+    --color-contrast-lighter: #fff1c6; /* light-wheat */
+
+
+    --color-wood: #574729; /* wood-brown */
+    --color-terra: #975330; /* terracotta */
+    --color-orange: #c57938; /* orange */
+    --color-yellow: #ffad3b; /* sun-yellow */
+
+    --header-primary: 60px;
+    --header-secondary: 40px;
+    --header-tertiary: 28px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-primary);
+    color: var(--color-contrast);
+}
+
+ul{
+    list-style: none;
+    padding: none;
+}
+
+.header-primary{
+    font-size: var(--header-primary);
+    font-weight: 700;
+}
+
+.header-secondary{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.header-tertiary{
+    font-size: var(--header-tertiary);
+    font-weight: 700;
+}
+
+.header-title{
+    font-size: 68px;
+    font-weight: 1000;
+}
