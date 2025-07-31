@@ -1,0 +1,264 @@
+[
+    {
+        "author": {
+            "full_name": "Luc Juneau",
+            "prefered_name": "Juneau",
+            "first_word": "Software",
+            "second_word": "Developer",
+            "primary_title": "Software Developer",
+            "secondary_title": "Web Developer",
+            "detailed_title": "Full Stack Software Developer",
+            "about": "I found my passion for Software Development before starting my journey at NSS. During my free time between classes I would create console applications, mods for popular games, and my own projects using the Unity and GMS2 game engines. Those projects made me love problem solving, UX design, and led me to want to study programming further at NSS"
+        },
+        "text": {},
+        "resume": {
+            "primary_skills": [
+                {
+                    "name": "Blazor",
+                    "start_date_of_skill": "06/10/2024",
+                    "shorthand": "blazor"
+                },
+                {
+                    "name": "React",
+                    "start_date_of_skill": "08/09/2023",
+                    "shorthand": "react"
+                },
+                {
+                    "name": "Svelte",
+                    "start_date_of_skill": "07/05/2025",
+                    "shorthand": "svelte"
+                },
+                {
+                    "name": "JavaScript",
+                    "start_date_of_skill": "08/09/2023",
+                    "shorthand": "js"
+                },
+                {
+                    "name": "TypeScript",
+                    "start_date_of_skill": "08/09/2023",
+                    "shorthand": "ts"
+                },
+                {
+                    "name": "C#",
+                    "start_date_of_skill": "08/09/2023",
+                    "shorthand": "csharp"
+                },
+                {
+                    "name": "HTML5",
+                    "start_date_of_skill": "08/09/2023",
+                    "shorthand": "html"
+                },
+                {
+                    "name": "CSS",
+                    "start_date_of_skill": "08/09/2023",
+                    "shorthand": "css"
+                },
+                {
+                    "name": "SQL",
+                    "start_date_of_skill": "08/09/2023",
+                    "shorthand": "sql"
+                },
+                {
+                    "name": ".NET",
+                    "start_date_of_skill": "08/09/2023",
+                    "shorthand": "net"
+                },
+                {
+                    "name": "APIs",
+                    "start_date_of_skill": "08/09/2023",
+                    "shorthand": "api"
+                },
+                {
+                    "name": "Git",
+                    "start_date_of_skill": "08/09/2023",
+                    "shorthand": "git"
+                },
+                {
+                    "name": "PostgreSQL",
+                    "start_date_of_skill": "08/09/2023",
+                    "shorthand": "postgresql"
+                },
+                {
+                    "name": "MySQL",
+                    "start_date_of_skill": "07/12/2024",
+                    "shorthand": "mysql"
+                },
+                {
+                    "name": "Entity Framework Core",
+                    "start_date_of_skill": "08/09/2023",
+                    "shorthand": "efc"
+                },
+                {
+                    "name": "SQLite",
+                    "start_date_of_skill": "07/12/2024",
+                    "shorthand": "sqlite"
+                },
+                {
+                    "name": "ASP.NET",
+                    "start_date_of_skill": "08/09/2023",
+                    "shorthand": "aspnet"
+                },
+                {
+                    "name": "Stripe",
+                    "start_date_of_skill": "01/01/2024",
+                    "shorthand": "stripe"
+                },
+                {
+                    "name": "Plaid",
+                    "start_date_of_skill": "10/01/2024",
+                    "shorthand": "plaid"
+                }
+            ],
+            "projects": [
+                {
+                    "title": "Hearth",
+                    "platform": "Windows MAUI Software",
+                    "skills": [
+                        "blazor",
+                        "csharp",
+                        "net",
+                        "sql",
+                        "api",
+                        "plaid"
+                    ],
+                    "tech": [
+                        "Plaid",
+                        "Visual Studio 2022"
+                    ],
+                    "about": "Hearth is a Banking and Finances Manager application I am developing for Windows, using .NET Maui Blazor Hybrid, SQLite, and the PLAID API for retrieving and authenticating Bank data and transactions.",
+                    "bullet_points": [
+                        "App has full CRUD Functionality",
+                        "Uses Blazor MAUI and SQLite for a compact fullstack development experience",
+                        "Styled using custom made CSS Library"
+                    ],
+                    "link": "https://github.com/kxtnluc/",
+                    "icon": "hearth",
+                    "from": "10/01/2024",
+                    "to": "present",
+                    "starProject": true
+                },
+                {
+                    "title": "Portfolio Website",
+                    "platform": "Svelte Front-End Website",
+                    "skills": [
+                        "svelte",
+                        "ts",
+                        "html",
+                        "css"
+                    ],
+                    "tech": [
+                        "Visual Studio Code"
+                    ],
+                    "about": "This portfolio website to promote my work was made entirely by myself. This site was made using Svelte total hand-written CSS",
+                    "bullet_points": [
+                        "App was made using SvelteKit in conjunction with TypeScript",
+                        "All CSS was hand-written, no libraries used"
+                    ],
+                    "link": "https://github.com/kxtnluc/juneau_studio_portfolio",
+                    "icon": "resume",
+                    "from": "12/01/2023",
+                    "to": "04/01/2024",
+                    "starProject": false
+                },
+                {
+                    "title": "Friendly Flavors",
+                    "platform": "React.js Web App",
+                    "skills": [
+                        "react",
+                        "js",
+                        "net",
+                        "postgresql",
+                        "api",
+                        "csharp"
+                    ],
+                    "tech": [
+                        "Plaid",
+                        "Visual Studio Code"
+                    ],
+                    "about": "Friendly Flavors is a recipe application where users can share digital cookbooks full of their personal recipes with family and friends!",
+                    "bullet_points": [
+                        "App has full CRUD functionality using React JSX and Routing.",
+                        "Back-end was built using C#, Entity Framework Core, and PostgreSQL"
+                    ],
+                    "link": "https://github.com/kxtnluc/capstone-friendly-flavors",
+                    "icon": "book",
+                    "from": "12/01/2023",
+                    "to": "04/01/2024",
+                    "starProject": false
+                }
+            ],
+            "education": {
+                "school_name": "Nashville Software School",
+                "degree": "Technical Certificate",
+                "about_short": "Full Stack Web Development Bootcamp",
+                "about": "Nashville Software School is a six-month intensive, full-time software development bootcamp focused on full stack development fundamentals and problem solving. This program ran us through Javascript, HTML, CSS, React on front-end, with C#/.NET and SQL on the back-end.",
+                "foundations": [
+                    {
+                        "description": "Hands on application of OOP fundamentals through group and individual projects reflecting real world business problems",
+                        "image_name": "clipboard"
+                    },
+                    {
+                        "description": "Source code version control and project management with Git/GitHub",
+                        "image_name": "git"
+                    },
+                    {
+                        "description": "JavaScript fundamentals leveraging DRY, modular, readable code and reusable components",
+                        "image_name": "recycle"
+                    },
+                    {
+                        "description": "Built browser-based single page applications using React, HTML, and CSS",
+                        "image_name": "chrome"
+                    },
+                    {
+                        "description": "Styled applications with CSS Frameworks, Bootstrap and Materialize, and wrote custom styles as needed",
+                        "image_name": "brush"
+                    },
+                    {
+                        "description": "Application design through white boarding dependencies and building ERDs",
+                        "image_name": "barchart"
+                    },
+                    {
+                        "description": "Created and modified database design/content using SQL, ASP.NET, ORM tooling, and EFC migrations",
+                        "image_name": "database"
+                    },
+                    {
+                        "description": "Created RESTful APIs with C#/.NET using WebAPI",
+                        "image_name": "api"
+                    }
+                ]
+            },
+            "work_experience": [
+                {
+                    "role_title": "Software QA",
+                    "company": "TACInsight",
+                    "from": "07/2024",
+                    "to": "present",
+                    "about": "Work as Quality Assurance for testing the company's software updates and writing to the dev team about errors. Also work with and test different programming tools to build a new app for the company with. Work with React, Typescript, Blazor .NET MAUI, SQLite, MySQL, ODBC, and Windows Services.",
+                    "skills": [
+                        "react",
+                        "ts",
+                        "git",
+                        "csharp",
+                        "sql"
+                    ],
+                    "icon": "motherboard"
+                },
+                {
+                    "role_title": "Full-Stack Web Developer",
+                    "company": "Freelance",
+                    "from": "01/2024",
+                    "to": "7/2025",
+                    "about": "Worked as a freelance Full-Stack web developer. Communicated closely with clients all around the US to create custom web-app experiences perfect for their needs.",
+                    "skills": [
+                        "csharp",
+                        "net",
+                        "react",
+                        "stripe",
+                        "postgresql"
+                    ],
+                    "icon": "globe"
+                }
+            ]
+        }
+    }
+]
