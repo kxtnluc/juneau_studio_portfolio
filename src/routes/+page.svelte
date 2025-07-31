@@ -98,7 +98,7 @@
                     </div>
                     <div class="h-f-i-icon h-f-i-linkedin">
                         <a
-                            href="https://www.linkedin.com/in/kxtnluc/"
+                            href={author.work_links[0].url}
                             aria-label="linkedin"
                         >
                             <svg
@@ -285,7 +285,7 @@
                         <div class="s4-b2-header">
                             <div class="s4-b2-h-primary">
                                 <div class="p-text header-secondary" style={p.starProject ? "color: var(--color-yellow)" : ""}>
-                                    <a href="/projects/hearth">{p.title}</a>
+                                    <a href="/projects/{p.title.toLocaleLowerCase()}">{p.title}</a>
                                 </div>
                                 <div class="p-icon" style={p.starProject ? "color: var(--color-yellow)" : ""}>
                                     <MiscIcons type={p.icon} size="l" />
@@ -351,13 +351,6 @@
                 </div>
             </div>
             <div class="2-footer"></div>
-        </div>
-    </div>
-    <div class="h-section-five">
-        <div class="s5-body">
-            <div class="s5-b-text">
-                Thanks for checking out this site :D
-            </div>
         </div>
     </div>
 </main>
@@ -463,7 +456,7 @@
         .h-picture {
             /* background-color: blue; */
             align-self: center;
-            width: 40%;
+            width: 46%;
         }
     }
 
@@ -805,15 +798,5 @@
         }
     }
 
-    .h-section-five{
-        background-color: var(--color-primary-darker);
-        .s5-body{
-            display: flex;
-            justify-content: center;
-            height: 30rem;
-            .s5-b-text{
-                align-self: center;
-            }
-        }
-    }
+
 </style>

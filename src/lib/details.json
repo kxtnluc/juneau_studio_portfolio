@@ -8,20 +8,51 @@
             "primary_title": "Software Developer",
             "secondary_title": "Web Developer",
             "detailed_title": "Full Stack Software Developer",
-            "about": "I found my passion for Software Development before starting my journey at NSS. During my free time between classes I would create console applications, mods for popular games, and my own projects using the Unity and GMS2 game engines. Those projects made me love problem solving, UX design, and led me to want to study programming further at NSS"
+            "about": "I found my passion for Software Development before starting my journey at NSS. During my free time between classes I would create console applications, mods for popular games, and my own projects using the Unity and GMS2 game engines. Those projects made me love problem solving, UX design, and led me to want to study programming further at NSS",
+            "work_links": [
+                {
+                    "name": "LinkedIn",
+                    "url": "https://www.linkedin.com/in/kxtnluc/"
+                },
+                {
+                    "name": "Github",
+                    "url": "https://github.com/kxtnluc"
+                }
+            ],
+            "social_links": [
+                {
+                    "name": "Instagram",
+                    "url": "https://www.instagram.com/juneau_studio/"
+                },
+                {
+                    "name": "Patreon",
+                    "url": "https://patreon.com/Juneau_Studio?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink"
+                }
+            ],
+            "other_links": [],
+            "email": "kxtnluc@gmail.com",
+            "phone": "8658886218",
+            "topics": [
+                "Looking to Hire",
+                "I need a Website",
+                "Resume Request",
+                "Looking for Consultation",
+                "Just want to get in touch",
+                "Other"
+            ]
         },
         "text": {},
         "resume": {
             "primary_skills": [
                 {
-                    "name": "Blazor",
-                    "start_date_of_skill": "06/10/2024",
-                    "shorthand": "blazor"
-                },
-                {
                     "name": "React",
                     "start_date_of_skill": "08/09/2023",
                     "shorthand": "react"
+                },
+                {
+                    "name": "Blazor",
+                    "start_date_of_skill": "06/10/2024",
+                    "shorthand": "blazor"
                 },
                 {
                     "name": "Svelte",
@@ -125,7 +156,8 @@
                         "Plaid",
                         "Visual Studio 2022"
                     ],
-                    "about": "Hearth is a Banking and Finances Manager application I am developing for Windows, using .NET Maui Blazor Hybrid, SQLite, and the PLAID API for retrieving and authenticating Bank data and transactions.",
+                    "about": "Hearth is a Banking and Finance Management application I am developing for Windows, using .NET Maui Blazor Hybrid, SQLite, and the PLAID API for retrieving and authenticating Bank data and transactions.",
+                    "about_long": "Hearth is a Finance Management application. The app allows users to connect their personal bank accounts from accross the internet, all the way from Discover Credit Cards to Venmo Debit Accounts. This functionality is achevied through the integration of the Plaid API, which lets users easily and securely connect their bank account in just a few clicks to my program. The Plaid API is also trusted and used by other software like Robinhood and RocketMoney. It has been a blast working with Plaid and Blazor MAUI to build this program. I work on this project Part-Time on the weekends, so progress is slow, but I cannot wait to unveil it as a finished product.",
                     "bullet_points": [
                         "App has full CRUD Functionality",
                         "Uses Blazor MAUI and SQLite for a compact fullstack development experience",
@@ -135,7 +167,51 @@
                     "icon": "hearth",
                     "from": "10/01/2024",
                     "to": "present",
-                    "starProject": true
+                    "starProject": true,
+                    "status": "In Development",
+                    "changelog": {
+                        "beta_versions": [
+                            {
+                                "version": "0.2.0",
+                                "release_date": "2025-03-10",
+                                "title": "Reports",
+                                "image_key": 0,
+                                "about": "",
+                                "log": [
+                                    "Added the 'Reports' page",
+                                    "Created Functions to calculate [ mean, median, mode, s, and ∂ ]",
+                                    "Componentized the Transaction List",
+                                    "Added Graphing Libraries",
+                                    "Implemented Circle Graphs into Reports page",
+                                    "Created Functions to calculate [ %, avg, profit, loss, and orther rates ]"
+                                ]
+                            },
+                            {
+                                "version": "0.2.1",
+                                "release_date": "2025-05-12",
+                                "title": "Accounts",
+                                "image_key": 1,
+                                "about": "",
+                                "log": [
+                                    "Added the 'Accounts' page",
+                                    "Added functionality for Credit accounts"
+                                ]
+                            },
+                            {
+                                "version": "0.2.2",
+                                "release_date": "2025-07-12",
+                                "title": "Categories",
+                                "image_key": 1,
+                                "about": "",
+                                "log": [
+                                    "Added 'Categories' to Transactions",
+                                    "Added the 'Categories' page",
+                                    "Changed how certain Icons were being rendered"
+                                ]
+                            }
+                        ],
+                        "release_versions": []
+                    }
                 },
                 {
                     "title": "Portfolio Website",
@@ -150,15 +226,56 @@
                         "Visual Studio Code"
                     ],
                     "about": "This portfolio website to promote my work was made entirely by myself. This site was made using Svelte total hand-written CSS",
+                    "about_long": "This portfolio website is both a method for me to promote my work, but also a fantastic opportunity for me to learn new skills and technologies. This site is my first endeavor into both Svelte and Local Server Hosting. I also made it a special point to hand-write every line of HTML, Svelte, TypeScript, and especially CSS. No generative code was used to build this project, and all of the sites styling was done by hand using global and modular CSS styling.",
                     "bullet_points": [
                         "App was made using SvelteKit in conjunction with TypeScript",
                         "All CSS was hand-written, no libraries used"
                     ],
                     "link": "https://github.com/kxtnluc/juneau_studio_portfolio",
                     "icon": "resume",
-                    "from": "12/01/2023",
-                    "to": "04/01/2024",
-                    "starProject": false
+                    "from": "7/05/2025",
+                    "to": "7/25/2025",
+                    "starProject": false,
+                    "status": "Published",
+                    "changelog": {
+                        "beta_versions": [
+                            {
+                                "version": "1.0.0",
+                                "release_date": "2026-03-10",
+                                "title": "Publish",
+                                "image_key": 0,
+                                "about": "",
+                                "log": [
+                                    "Published and Deployed via my own locally hosted server",
+                                    "Finalized Styling"
+                                ]
+                            },
+                            {
+                                "version": "0.1.0",
+                                "release_date": "2025-04-01",
+                                "title": "Home Page",
+                                "image_key": 1,
+                                "about": "",
+                                "log": [
+                                    "Added the main Home page",
+                                    "Built Project using SvelteKit",
+                                    "Created a modular site using JSON files"
+                                ]
+                            },
+                            {
+                                "version": "0.1.1",
+                                "release_date": "2025-07-12",
+                                "title": "Projects",
+                                "image_key": 1,
+                                "about": "",
+                                "log": [
+                                    "Added the 'Projects' page",
+                                    "Created a seamless way to render images/snapshots and store it in JSON"
+                                ]
+                            }
+                        ],
+                        "release_versions": []
+                    }
                 },
                 {
                     "title": "Friendly Flavors",
@@ -176,6 +293,7 @@
                         "Visual Studio Code"
                     ],
                     "about": "Friendly Flavors is a recipe application where users can share digital cookbooks full of their personal recipes with family and friends!",
+                    "about_long": "Friendly Flavors is a recipe book builder Web App, where users can share digital cookbooks full of their personal recipes with family and friends! The app hosted a sound database of hundereds of ingredients and cooking terms so users could filter, sort, and search up the recipes they desired most.",
                     "bullet_points": [
                         "App has full CRUD functionality using React JSX and Routing.",
                         "Back-end was built using C#, Entity Framework Core, and PostgreSQL"
@@ -184,7 +302,35 @@
                     "icon": "book",
                     "from": "12/01/2023",
                     "to": "04/01/2024",
-                    "starProject": false
+                    "starProject": false,
+                    "status": "Retired",
+                    "changelog": {
+                        "beta_versions": [
+                            {
+                                "version": "1.0.0",
+                                "release_date": "2024-02-01",
+                                "title": "Capstone",
+                                "image_key": 0,
+                                "about": "",
+                                "log": [
+                                    "Published and Deployed via Digital Ocean",
+                                    "Finalized Styling",
+                                    "Created a Demonstratable Environment for Capstone Demo"
+                                ]
+                            },
+                            {
+                                "version": "-",
+                                "release_date": "2025-04-01",
+                                "title": "Retired",
+                                "image_key": 0,
+                                "about": "",
+                                "log": [
+                                    "Took down from Digital Ocean"
+                                ]
+                            }
+                        ],
+                        "release_versions": []
+                    }
                 }
             ],
             "education": {

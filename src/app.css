@@ -35,6 +35,18 @@ ul{
     padding: none;
 }
 
+.indent{
+    margin-left: 10%;
+}
+
+.indent-s{
+    margin-left: 6%;
+}
+
+.indent-l{
+    margin-left: 13%;
+}
+
 .header-primary{
     font-size: var(--header-primary);
     font-weight: 700;
