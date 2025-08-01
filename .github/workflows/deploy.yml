@@ -1,34 +1,12 @@
-name: Auto Deploy
+name: Test Runner
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  deploy:
+  test:
     runs-on: self-hosted
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Test SSH Connection
-        run: ssh -vvv -o StrictHostKeyChecking=no kxtnluc@192.168.1.209 exit
-
-      - name: Set up SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -H 192.168.1.209 >> ~/.ssh/known_hosts
-
-      - name: Pull and build on server
-        run: |
-          ssh -o StrictHostKeyChecking=no kxtnluc@192.168.1.209 << 'EOF'
-            cd /home/kxtnluc/vassals/juneau_studio_portfolio
-            git pull origin main
-            npm install
-            npm run build
-            sudo systemctl restart nginx
-          EOF
-
+      - name: Print Hello
+        run: echo "Hello from my Ubuntu server!"
