@@ -25,7 +25,9 @@ jobs:
           ls -ld node_modules/.bin
 
       - name: Fix permissions (if needed)
-        run: chmod -R +x node_modules/.bin
+        run: |
+          chmod -R +x node_modules/.bin &&
+          chmod +x node_modules/vite/bin/vite.js
 
       - name: Build project
         working-directory: /home/kxtnluc/vassals/juneau_studio_portfolio
