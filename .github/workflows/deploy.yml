@@ -30,8 +30,7 @@ jobs:
           chmod +x node_modules/vite/bin/vite.js
 
       - name: Build project
-        working-directory: /home/kxtnluc/vassals/juneau_studio_portfolio
-        run: npx vite build
+        run: node node_modules/vite/bin/vite.js build
 
       - name: Deploy build to live directory
         run: |
