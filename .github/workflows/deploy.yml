@@ -27,7 +27,7 @@ jobs:
 
       - name: Build project
         working-directory: /home/kxtnluc/vassals/juneau_studio_portfolio
-        run: npm run build
+        run: npx vite build
 
       - name: Deploy build to live directory
         run: |
