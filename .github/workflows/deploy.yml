@@ -9,14 +9,25 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install and Build
+      - name: Install dependencies
         working-directory: /home/kxtnluc/vassals/juneau_studio_portfolio
-        run: |
-          npm install
-          npm run build
+        run: npm install
+
+      - name: Fix permissions (if needed)
+        working-directory: /home/kxtnluc/vassals/juneau_studio_portfolio
+        run: chmod -R +x node_modules/.bin
+
+      - name: Build project
+        working-directory: /home/kxtnluc/vassals/juneau_studio_portfolio
+        run: npm run build
 
       - name: Restart Nginx
         run: sudo systemctl restart nginx
