@@ -12,6 +12,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Test SSH Connection
+        run: ssh -vvv -o StrictHostKeyChecking=no kxtnluc@192.168.1.239 exit
+
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
@@ -21,10 +24,11 @@ jobs:
 
       - name: Pull and build on server
         run: |
-          ssh kxtnluc@192.168.1.209 '
-            cd /home/kxtnluc/vassals/juneau_studio_portfolio &&
-            git pull origin main &&
-            npm install &&
+          ssh -o StrictHostKeyChecking=no kxtnluc@192.168.1.209 << 'EOF'
+            cd /home/kxtnluc/vassals/juneau_studio_portfolio
+            git pull origin main
+            npm install
             npm run build
             sudo systemctl restart nginx
-          '
+          EOF
+
