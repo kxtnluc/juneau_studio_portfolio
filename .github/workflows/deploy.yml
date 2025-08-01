@@ -16,8 +16,6 @@ jobs:
 
       - name: Checkout code into live folder
         uses: actions/checkout@v3
-        with:
-          path: /home/kxtnluc/vassals/juneau_studio_portfolio
 
       - name: Install dependencies
         working-directory: /home/kxtnluc/vassals/juneau_studio_portfolio
@@ -30,6 +28,11 @@ jobs:
       - name: Build project
         working-directory: /home/kxtnluc/vassals/juneau_studio_portfolio
         run: npx run build
+
+      - name: Deploy build to live directory
+        run: |
+          rsync -av --delete ./build/ /home/kxtnluc/vassals/juneau_studio_portfolio/
+        # Replace ./build/ with your actual SvelteKit build output folder if different
 
       - name: Restart Nginx
         run: sudo systemctl restart nginx
