@@ -1,31 +1,29 @@
-name: Deploy to Ubuntu Server
+name: Auto Deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan -H emperor >> ~/.ssh/known_hosts
 
-      - name: Pull and Build on Server
+      - name: Pull and build on server
         run: |
-          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-            cd ${{ secrets.PROJECT_DIR }}
-            git pull origin main
-            npm ci
+          ssh kxtnluc@emperor '
+            cd /path/to/project &&
+            git pull origin main &&
+            npm install &&
             npm run build
-            sudo systemctl restart nginx
-          EOF
+          '
