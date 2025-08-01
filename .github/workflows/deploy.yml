@@ -22,6 +22,9 @@ jobs:
           cd ~/actions-runner/_work/juneau_studio_portfolio/juneau_studio_portfolio &&
           ls &&
           whoami &&
+          ls -ld . &&
+          ls -ld node_modules &&
+          ls -ld node_modules/.bin &&
           npm install
 
       - name: Fix permissions (if needed)
