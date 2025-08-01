@@ -14,7 +14,7 @@ jobs:
         
       - name: Pull and build on server
         run: |
-          cd vassals/juneau_studio_portfolio &&
+          cd /home/kxtnluc/vassals/juneau_studio_portfolio &&
           git pull origin main &&
           npm install &&
           npm run build &&
