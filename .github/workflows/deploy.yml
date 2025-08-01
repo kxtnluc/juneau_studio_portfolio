@@ -19,10 +19,10 @@ jobs:
           ls &&
           echo $PWD
           whoami &&
+          npm install &&
           ls -ld . &&
           ls -ld node_modules &&
-          ls -ld node_modules/.bin &&
-          npm install
+          ls -ld node_modules/.bin
 
       - name: Fix permissions (if needed)
         run: chmod -R +x node_modules/.bin
