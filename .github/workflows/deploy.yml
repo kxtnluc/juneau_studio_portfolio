@@ -34,7 +34,7 @@ jobs:
 
       - name: Deploy build to live directory
         run: |
-          rsync -av --delete ./build/ /home/kxtnluc/vassals/juneau_studio_portfolio/
+          rsync -av --delete ./build/ /home/kxtnluc/vassals/juneau_studio_portfolio/build
         # Replace ./build/ with your actual SvelteKit build output folder if different
 
       - name: Restart Nginx
