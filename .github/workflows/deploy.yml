@@ -17,11 +17,11 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -H emperor >> ~/.ssh/known_hosts
+          ssh-keyscan -H 192.168.1.209 >> ~/.ssh/known_hosts
 
       - name: Pull and build on server
         run: |
-          ssh kxtnluc@emperor '
+          ssh kxtnluc@192.168.1.209 '
             cd /home/kxtnluc/vassals/juneau_studio_portfolio &&
             git pull origin main &&
             npm install &&
