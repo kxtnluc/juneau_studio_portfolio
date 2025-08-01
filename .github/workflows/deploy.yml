@@ -19,7 +19,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd ~/actions-runner/_work/juneau_studio_portfolio/juneau_studio_portfolio
+          cd ~/actions-runner/_work/juneau_studio_portfolio/juneau_studio_portfolio &&
+          ls &&
+          whoami &&
           npm install
 
       - name: Fix permissions (if needed)
