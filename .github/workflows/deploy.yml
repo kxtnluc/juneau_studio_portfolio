@@ -6,23 +6,16 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted  # or [self-hosted, linux, x64] if you prefer
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        
-      - name: Pull and build on server
-        run: |
-          cd /home/kxtnluc/vassals/juneau_studio_portfolio &&
-          git pull origin main &&
-          npm install &&
-          npm run build &&
-          sudo systemctl restart nginx
 
       - name: Install and Build
+        working-directory: /home/kxtnluc/vassals/juneau_studio_portfolio
         run: |
-          npm install &&
+          npm install
           npm run build
 
       - name: Restart Nginx
