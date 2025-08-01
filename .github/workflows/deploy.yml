@@ -1,12 +1,29 @@
-name: Test Runner
+name: Auto Deploy
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
-  test:
-    runs-on: self-hosted
+  deploy:
+    runs-on: self-hosted  # or [self-hosted, linux, x64] if you prefer
+
     steps:
-      - name: Print Hello
-        run: echo "Hello from my Ubuntu server!"
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Pull and build on server
+        run: |
+          cd vassals/juneau_studio_portfolio &&
+          git pull origin main &&
+          npm install &&
+          npm run build &&
+          sudo systemctl restart nginx
+
+      - name: Install and Build
+        run: |
+          npm install &&
+          npm run build
+
+      - name: Restart Nginx
+        run: sudo systemctl restart nginx
