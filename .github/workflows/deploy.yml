@@ -14,8 +14,10 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Checkout code
+      - name: Checkout code into live folder
         uses: actions/checkout@v3
+        with:
+          path: /home/kxtnluc/vassals/juneau_studio_portfolio
 
       - name: Install dependencies
         working-directory: /home/kxtnluc/vassals/juneau_studio_portfolio
