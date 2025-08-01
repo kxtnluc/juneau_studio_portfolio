@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Test SSH Connection
-        run: ssh -vvv -o StrictHostKeyChecking=no kxtnluc@192.168.1.239 exit
+        run: ssh -vvv -o StrictHostKeyChecking=no kxtnluc@192.168.1.209 exit
 
       - name: Set up SSH
         run: |
