@@ -19,8 +19,10 @@ jobs:
 
       - name: Install dependencies
         run: |
+          ls
           cd ~/actions-runner/_work/juneau_studio_portfolio/juneau_studio_portfolio &&
           ls &&
+          echo $PWD
           whoami &&
           ls -ld . &&
           ls -ld node_modules &&
