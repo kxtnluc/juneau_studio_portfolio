@@ -32,9 +32,10 @@ jobs:
       - name: Build project
         run: node node_modules/vite/bin/vite.js build
 
-      - name: Deploy build to live directory
+      - name: Copy, Sync, and Move Around
         run: |
           rsync -av --delete ./build/ /home/kxtnluc/vassals/juneau_studio_portfolio/build
+          rsync -av --delete /home/kxtnluc/vassals/juneau_studio_portfolio/build/ /var/www/juneaustudio.com/
         # Replace ./build/ with your actual SvelteKit build output folder if different
 
       - name: Restart Nginx
