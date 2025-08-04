@@ -165,7 +165,7 @@
                     ],
                     "link": "https://github.com/kxtnluc/",
                     "icon": "hearth",
-                    "from": "10/01/2024",
+                    "from": "10/24",
                     "to": "present",
                     "starProject": true,
                     "status": "In Development",
@@ -233,8 +233,8 @@
                     ],
                     "link": "https://github.com/kxtnluc/juneau_studio_portfolio",
                     "icon": "resume",
-                    "from": "7/05/2025",
-                    "to": "7/25/2025",
+                    "from": "7/25",
+                    "to": "8/25",
                     "starProject": false,
                     "status": "Published",
                     "changelog": {
@@ -300,8 +300,8 @@
                     ],
                     "link": "https://github.com/kxtnluc/capstone-friendly-flavors",
                     "icon": "book",
-                    "from": "12/01/2023",
-                    "to": "04/01/2024",
+                    "from": "12/23",
+                    "to": "04/24",
                     "starProject": false,
                     "status": "Retired",
                     "changelog": {
@@ -377,7 +377,7 @@
                 {
                     "role_title": "Software QA",
                     "company": "TACInsight",
-                    "from": "07/2024",
+                    "from": "07/24",
                     "to": "present",
                     "about": "Work as Quality Assurance for testing the company's software updates and writing to the dev team about errors. Also work with and test different programming tools to build a new app for the company with. Work with React, Typescript, Blazor .NET MAUI, SQLite, MySQL, ODBC, and Windows Services.",
                     "skills": [
@@ -392,8 +392,8 @@
                 {
                     "role_title": "Full-Stack Web Developer",
                     "company": "Freelance",
-                    "from": "01/2024",
-                    "to": "7/2025",
+                    "from": "01/24",
+                    "to": "7/25",
                     "about": "Worked as a freelance Full-Stack web developer. Communicated closely with clients all around the US to create custom web-app experiences perfect for their needs.",
                     "skills": [
                         "csharp",

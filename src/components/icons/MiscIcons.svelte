@@ -3,6 +3,7 @@
     export let size:string = "m";
 
     let intSize = 16
+    let windowWidth = window.innerWidth;
 
     if(size == "m") 
     { 
@@ -23,6 +24,11 @@
     else if (size == "btn")
     {
         intSize = 32
+    }
+
+    if (windowWidth <= 480)
+    {
+      intSize = intSize - 20;
     }
 </script>
 
