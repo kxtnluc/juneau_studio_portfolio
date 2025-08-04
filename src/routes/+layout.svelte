@@ -103,105 +103,193 @@
 </div> -->
 
 <style>
-	.navbar {
-		display: flex;
-		flex-flow: row nowrap;
-		justify-content: space-between;
-		height: 5rem;
-		margin-left: 20%;
-		margin-right: 20%;
-		background-color: var(--color-primary);
-		border-bottom-left-radius: 5px;
-		border-bottom-right-radius: 5px;
+	@media (max-width: 480px) {
+		.navbar {
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			height: 5rem;
+			background-color: var(--color-primary);
 
-		.n-left {
-			align-self: center;
-			margin-left: 3rem;
-			.l-name {
-				font-weight: 700;
-				font-size: 32px;
+			.n-left {
+				align-self: center;
+				margin-left: 2rem;
+				.l-name {
+					width: 110px;
+					/* background-color: red; */
+					font-weight: 700;
+					font-size: 18px;
+				}
+			}
+
+			.n-right {
+				align-self: center;
+				.n-ul {
+					letter-spacing: 2px;
+					display: flex;
+					flex-flow: row nowrap;
+					justify-content: center;
+
+					.n-li {
+						font-size: 18px;
+						margin-right: 2vw;
+						align-self: center;
+						transition: opacity 300ms ease;
+						position: relative;
+						/* background-color: red; */
+						width: 120px;
+					}
+
+					.n-li:hover {
+						opacity: 85%;
+						cursor: pointer;
+					}
+
+					.n-li:hover::after {
+						width: 100%;
+					}
+				}
 			}
 		}
 
-		.n-right {
-			align-self: center;
-			margin-right: 1.5rem;
-			margin-right: 1.5rem;
-			.n-ul {
-				letter-spacing: 3px;
+		.n-li-icon {
+			display: none;
+			margin-left: 1rem;
+			margin-right: 1rem;
+			transition: 250ms;
+		}
+
+		.n-li-icon:hover {
+			opacity: 85%;
+			cursor: pointer;
+		}
+
+		.icon-linkedin {
+			width: 30px;
+			height: 30px;
+			display: inline-block; /* ensures it doesn't collapse */
+		}
+
+		.icon-github {
+			width: 35px;
+			height: 35px;
+			display: inline-block; /* ensures it doesn't collapse */
+		}
+
+		.footer {
+			background-color: var(--color-primary-darker);
+
+			.f-body {
 				display: flex;
-				flex-flow: row nowrap;
-				justify-content: space-between;
-
-				.n-li {
-					margin-left: 3rem;
-					margin-right: 3rem;
-					font-size: 24px;
-					transition: opacity 300ms ease;
-					position: relative;
-				}
-
-				.n-li::after {
-					content: "";
-					position: absolute;
-					left: 0;
-					bottom: -4px;
-					width: 0;
-					height: 3px;
-					background-image: linear-gradient(
-						to right,
-						var(--color-orange),
-						var(--color-contrast-lighter)
-					);
-					transition: width 250ms ease-out;
-				}
-
-				.n-li:hover {
-					/* opacity: 85%; */
-					cursor: pointer;
-				}
-
-				.n-li:hover::after {
-					width: 100%;
+				justify-content: center;
+				height: 40rem;
+				.f-b-text {
+					align-self: center;
 				}
 			}
 		}
 	}
 
-	.n-li-icon {
-		margin-left: 1rem;
-		margin-right: 1rem;
-		transition: 250ms;
+	@media (min-width: 480px) {
+		.navbar {
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			height: 5rem;
+			margin-left: 20%;
+			margin-right: 20%;
+			background-color: var(--color-primary);
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+
+			.n-left {
+				align-self: center;
+				margin-left: 3rem;
+				.l-name {
+					font-weight: 700;
+					font-size: 32px;
+				}
+			}
+
+			.n-right {
+				align-self: center;
+				margin-right: 1.5rem;
+				margin-right: 1.5rem;
+				.n-ul {
+					letter-spacing: 3px;
+					display: flex;
+					flex-flow: row nowrap;
+					justify-content: space-between;
+
+					.n-li {
+						margin-left: 3rem;
+						margin-right: 3rem;
+						font-size: 24px;
+						transition: opacity 300ms ease;
+						position: relative;
+					}
+
+					.n-li::after {
+						content: "";
+						position: absolute;
+						left: 0;
+						bottom: -4px;
+						width: 0;
+						height: 3px;
+						background-image: linear-gradient(
+							to right,
+							var(--color-orange),
+							var(--color-contrast-lighter)
+						);
+						transition: width 250ms ease-out;
+					}
+
+					.n-li:hover {
+						/* opacity: 85%; */
+						cursor: pointer;
+					}
+
+					.n-li:hover::after {
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		.n-li-icon {
+			margin-left: 1rem;
+			margin-right: 1rem;
+			transition: 250ms;
+		}
+
+		.n-li-icon:hover {
+			opacity: 85%;
+			cursor: pointer;
+		}
+
+		.icon-linkedin {
+			width: 30px;
+			height: 30px;
+			display: inline-block; /* ensures it doesn't collapse */
+		}
+
+		.icon-github {
+			width: 35px;
+			height: 35px;
+			display: inline-block; /* ensures it doesn't collapse */
+		}
+
+		.footer {
+			background-color: var(--color-primary-darker);
+
+			.f-body {
+				display: flex;
+				justify-content: center;
+				height: 40rem;
+				.f-b-text {
+					align-self: center;
+				}
+			}
+		}
 	}
-
-	.n-li-icon:hover {
-		opacity: 85%;
-		cursor: pointer;
-	}
-
-	.icon-linkedin {
-		width: 30px;
-		height: 30px;
-		display: inline-block; /* ensures it doesn't collapse */
-	}
-
-	.icon-github {
-		width: 35px;
-		height: 35px;
-		display: inline-block; /* ensures it doesn't collapse */
-	}
-
-	.footer{
-
-        background-color: var(--color-primary-darker);
-
-        .f-body{
-            display: flex;
-            justify-content: center;
-            height: 40rem;
-            .f-b-text{
-                align-self: center;
-            }
-        }
-    }
 </style>
