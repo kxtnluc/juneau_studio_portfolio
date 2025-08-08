@@ -113,7 +113,7 @@
 
 			.n-left {
 				align-self: center;
-				margin-left: 2rem;
+				margin-left: 1rem;
 				.l-name {
 					width: 110px;
 					/* background-color: red; */
@@ -125,14 +125,15 @@
 			.n-right {
 				align-self: center;
 				.n-ul {
+					margin-left: 1rem;
+					width: 90%;
 					letter-spacing: 2px;
 					display: flex;
 					flex-flow: row nowrap;
 					justify-content: center;
 
 					.n-li {
-						font-size: 18px;
-						margin-right: 2vw;
+						font-size: 14px;
 						align-self: center;
 						transition: opacity 300ms ease;
 						position: relative;
@@ -143,10 +144,6 @@
 					.n-li:hover {
 						opacity: 85%;
 						cursor: pointer;
-					}
-
-					.n-li:hover::after {
-						width: 100%;
 					}
 				}
 			}

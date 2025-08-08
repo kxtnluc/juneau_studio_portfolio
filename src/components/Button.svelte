@@ -61,21 +61,41 @@
         cursor: pointer;
         opacity: 85%;
     }
+    @media (max-width: 480px) {
+        .size-m{
+            font-size: 3.5vw;
+            letter-spacing: 1px;
+            padding-left: 2vw;
+            padding-right: 2vw;
+            height: 7vw;
+            border-radius: 5px;
+        }
     
-    .size-m{
-        font-size: 1.2vw;
-        padding-left: 0.5vw;
-        padding-right: 0.5vw;
-        height: 2vw;
-        border-radius: 5px;
+        .size-l{
+            font-size: 1.75rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            height: 2.75rem;
+            border-radius: 5px;
+        }
     }
 
-    .size-l{
-        font-size: 1.75rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        height: 2.75rem;
-        border-radius: 5px;
+        @media (min-width: 480px) {
+        .size-m{
+            font-size: 1.2vw;
+            padding-left: 0.5vw;
+            padding-right: 0.5vw;
+            height: 2vw;
+            border-radius: 5px;
+        }
+    
+        .size-l{
+            font-size: 1.75rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            height: 2.75rem;
+            border-radius: 5px;
+        }
     }
 
     .icon, .text{
