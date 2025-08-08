@@ -9,7 +9,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Checkout code into live folder
+      - name: Checkout code into runners folder
         uses: actions/checkout@v3
 
       - name: Install dependencies
@@ -34,9 +34,10 @@ jobs:
 
       - name: Copy, Sync, and Move Around
         run: |
-          rsync -av --delete ./build/ /home/kxtnluc/vassals/juneau_studio_portfolio/build
-          rsync -av --delete /home/kxtnluc/vassals/juneau_studio_portfolio/build/ /var/www/juneaustudio.com/
+          rsync -av --delete ./build/ /home/kxtnluc/vassals/juneaustudio.com/build
         # Replace ./build/ with your actual SvelteKit build output folder if different
 
-      - name: Restart Nginx
-        run: sudo systemctl restart nginx
+      - name: Restart Nginx and Pm2
+        run: |
+          sudo systemctl restart nginx
+          pm2 restart juneaustudio
