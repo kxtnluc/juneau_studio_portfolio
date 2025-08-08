@@ -15,7 +15,7 @@
         <slot></slot>
     </button>
 {:else if icon_placement != "after"}
-    <button class="b-button-icon {Varient}" onclick={onClick} type={Type}>
+    <button class="b-button-icon size-{size} {Varient}" onclick={onClick} type={Type}>
         <div class="icon">
             <MiscIcons type={icon} size="btn" />
         </div>
@@ -24,7 +24,7 @@
         </div>
     </button>
 {:else}
-    <button class="b-button-icon {Varient}" onclick={onClick} type={Type}>
+    <button class="b-button-icon size-{size} {Varient}" onclick={onClick} type={Type}>
         <div class="text">
             <slot></slot>
         </div>
@@ -86,7 +86,7 @@
             padding-left: 0.5vw;
             padding-right: 0.5vw;
             height: 2vw;
-            border-radius: 5px;
+            border-radius: 0.5vw;
         }
     
         .size-l{
@@ -94,7 +94,7 @@
             padding-left: 1rem;
             padding-right: 1rem;
             height: 2.75rem;
-            border-radius: 5px;
+            border-radius: 0.5vw;
         }
     }
 
