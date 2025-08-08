@@ -1,9 +1,16 @@
 <script lang="ts">
+    import { browser } from "$app/environment";
+
     export let type:string = "clipboard";
     export let size:string = "m";
 
     let intSize = 16
-    let windowWidth = window.innerWidth;
+    let windowWidth = 1920
+
+    if(browser)
+    {
+      windowWidth = window.innerWidth;
+    }
 
     if(size == "m") 
     { 
@@ -28,7 +35,7 @@
 
     if (windowWidth <= 480)
     {
-      intSize = intSize - 20;
+      intSize = Math.max(8, intSize - 20);
     }
 </script>
 
