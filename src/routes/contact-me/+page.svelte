@@ -17,7 +17,7 @@
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, subject, message, topic }),
-        });     
+        });
 
         if (res.ok) {
             status = "Email sent!";
@@ -34,7 +34,7 @@
         <div class="s1-body-2">
             <div class="s1-b2-header header-secondary">Hot Links</div>
             <div class="s1-b2-body">
-                <div class="header-tertiary link-header">Work Links</div>
+                <div class="header-tertiary link-header">Work</div>
                 <ul class="links work-links">
                     {#each author.work_links as wl}
                         <li class="links-li">
@@ -47,6 +47,7 @@
                                 <MiscIcons
                                     size="ml"
                                     type={wl.name.toLowerCase()}
+                                    resizeIconForMobile="{false}"
                                 />
                             </a>
                             <a
@@ -60,7 +61,7 @@
                         </li>
                     {/each}
                 </ul>
-                <div class="header-tertiary link-header">Social Links</div>
+                <div class="header-tertiary link-header">Social</div>
                 <ul class="links social-links">
                     {#each author.social_links as sl}
                         <li class="links-li">
@@ -73,6 +74,7 @@
                                 <MiscIcons
                                     size="ml"
                                     type={sl.name.toLowerCase()}
+                                    resizeIconForMobile="{false}"
                                 />
                             </a>
                             <a
@@ -112,9 +114,7 @@
                     </div>
                     <div class="topic-container">
                         <select class="topic" bind:value={topic}>
-                                <option>
-                                    Choose a Topic
-                                </option>
+                            <option> Choose a Topic </option>
                             {#each author.topics as t}
                                 <option>
                                     {t}
@@ -141,123 +141,96 @@
 </div>
 
 <style>
-    .page-header {
-        margin-top: 2%;
-        margin-left: 20%;
-    }
-
-    .status{
-        display: flex;
-        justify-content: center;
-        margin-left: 40%;
-        margin-top: 1vw;
-        font-size: 1.25vw;
-        font-style: italic;
-    }
-
-    .contact-section-1 {
-        background-color: var(--color-contrast);
-        margin-left: 25%;
-        margin-right: 25%;
-        margin-top: 1vw;
-        color: var(--color-primary);
-        border-radius: 25px;
-        display: flex;
-        justify-content: space-between;
-
-        .s1-body-2 {
-            width: 50%;
-
-            .s1-b2-header {
-                margin-top: 1vw;
-                margin-left: 10%;
-            }
-
-            .s1-b2-body {
-                margin-left: 10%;
-
-                .link-header {
-                    margin-left: 2%;
-                }
-                .links {
-                    margin-left: 7%;
-                    font-size: 1vw;
-                    .links-li {
-                        display: flex;
-
-                        margin-top: 1vw;
-                        margin-bottom: 1vw;
-
-                        transition: 250ms;
-                        .icon,
-                        .text {
-                            align-self: center;
-                        }
-
-                        .text {
-                            margin-left: 0.5vw;
-                        }
-                    }
-
-                    .links-li:hover {
-                        cursor: pointer;
-                        opacity: 0.75;
-                    }
-                }
-            }
+    @media (min-width: 480px) {
+        .page-header {
+            margin-top: 2%;
+            margin-left: 20%;
         }
 
-        .s1-body {
-            width: 55%;
+        .status {
+            display: flex;
+            justify-content: center;
+            margin-left: 40%;
+            margin-top: 1vw;
+            font-size: 1.25vw;
+            font-style: italic;
+        }
 
-            .s1-b-header {
-                display: flex;
-                justify-content: right;
-                margin-top: 1vw;
-                margin-right: 10%;
+        .contact-section-1 {
+            background-color: var(--color-contrast);
+            margin-left: 25%;
+            margin-right: 25%;
+            margin-top: 1vw;
+            color: var(--color-primary);
+            border-radius: 25px;
+            display: flex;
+            justify-content: space-between;
+
+            .s1-body-2 {
+                width: 50%;
+
+                .s1-b2-header {
+                    margin-top: 1vw;
+                    margin-left: 10%;
+                }
+
+                .s1-b2-body {
+                    margin-left: 10%;
+
+                    .link-header {
+                        margin-left: 2%;
+                    }
+                    .links {
+                        margin-left: 7%;
+                        font-size: 1vw;
+                        .links-li {
+                            display: flex;
+
+                            margin-top: 1vw;
+                            margin-bottom: 1vw;
+
+                            transition: 250ms;
+                            .icon,
+                            .text {
+                                align-self: center;
+                            }
+
+                            .text {
+                                margin-left: 0.5vw;
+                            }
+                        }
+
+                        .links-li:hover {
+                            cursor: pointer;
+                            opacity: 0.75;
+                        }
+                    }
+                }
             }
-            .s1-b-form {
-                display: flex;
-                flex-flow: column nowrap;
-                padding-bottom: 1vw;
 
-                .f-li {
-                    margin-top: 0.5vw;
-                    margin-bottom: 0.5vw;
-                    margin-left: 10%;
-                    margin-right: 10%;
-                }
+            .s1-body {
+                width: 55%;
 
-                .message,
-                .subject {
-                    color: var(--color-primary);
-                    border: 2px solid var(--color-primary);
-                    border-radius: 10px;
-                    padding-top: 0.5vw;
-                    padding-bottom: 0.5vw;
-                    padding-left: 0.5vw;
-                    width: 100%;
-                }
-
-                .f-li-2 {
-                    margin-top: 0.5vw;
-                    margin-bottom: 0.5vw;
-                    margin-left: 10%;
-                    margin-right: 10%;
+                .s1-b-header {
                     display: flex;
-                    justify-content: space-between;
-                    .email {
-                        color: var(--color-primary);
-                        border: 2px solid var(--color-primary);
-                        border-radius: 10px;
-                        padding-top: 0.5vw;
-                        padding-bottom: 0.5vw;
-                        padding-left: 0.5vw;
-                        width: 95%;
-                        height: 2.25vw;
+                    justify-content: right;
+                    margin-top: 1vw;
+                    margin-right: 10%;
+                }
+                .s1-b-form {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    padding-bottom: 1vw;
+
+                    .f-li {
+                        margin-top: 0.5vw;
+                        margin-bottom: 0.5vw;
+                        margin-left: 10%;
+                        margin-right: 10%;
                     }
 
-                    .topic {
+                    .message,
+                    .subject {
                         color: var(--color-primary);
                         border: 2px solid var(--color-primary);
                         border-radius: 10px;
@@ -265,12 +238,189 @@
                         padding-bottom: 0.5vw;
                         padding-left: 0.5vw;
                         width: 100%;
-                        height: 2.25vw;
+                        font-size: 2vw;
+                    }
+
+                    .f-li-2 {
+                        margin-top: 0.5vw;
+                        margin-bottom: 0.5vw;
+                        margin-left: 10%;
+                        margin-right: 10%;
+                        display: flex;
+                        justify-content: space-between;
+                        .email {
+                            color: var(--color-primary);
+                            border: 2px solid var(--color-primary);
+                            border-radius: 10px;
+                            padding-top: 0.5vw;
+                            padding-bottom: 0.5vw;
+                            padding-left: 0.5vw;
+                            width: 95%;
+                            height: 2.5vw;
+                            font-size: 1.5vw;
+                        }
+
+                        .topic {
+                            color: var(--color-primary);
+                            border: 2px solid var(--color-primary);
+                            border-radius: 10px;
+                            padding-top: 0.5vw;
+                            padding-bottom: 0.5vw;
+                            padding-left: 0.5vw;
+                            width: 100%;
+                            height: 2.5vw;
+                            font-size: 1.5vw;
+                        }
+                    }
+
+                    .btn {
+                        letter-spacing: 2px;
+                        align-self: flex-end;
                     }
                 }
+            }
+        }
+    }
 
-                .btn {
-                    align-self: flex-end;
+    @media (max-width: 480px) {
+        .page-header {
+            margin-top: 2%;
+            margin-left: 5%;
+            font-size: 10vw;
+        }
+
+        .status {
+            display: flex;
+            justify-content: center;
+            margin-left: 40%;
+            margin-top: 1vw;
+            font-size: 1.25vw;
+            font-style: italic;
+        }
+
+        .contact-section-1 {
+            background-color: var(--color-contrast);
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 1vw;
+            color: var(--color-primary);
+            border-radius: 25px;
+            display: flex;
+            justify-content: space-between;
+
+            .s1-body-2 {
+                width: 50%;
+
+                .s1-b2-header {
+                    margin-top: 1vw;
+                    margin-left: 10%;
+                    font-size: 7vw;
+                }
+
+                .s1-b2-body {
+                    margin-left: 10%;
+
+                    .link-header {
+                        margin-left: 1%;
+                        font-size: 5vw;
+                    }
+                    .links {
+                        margin-left: 7%;
+                        font-size: 1vw;
+                        .links-li {
+                            display: flex;
+
+                            margin-top: 1vw;
+                            margin-bottom: 1vw;
+
+                            transition: 250ms;
+                            .icon,
+                            .text {
+                                align-self: center;
+                                font-size: 5vw;
+                            }
+
+                            .text {
+                                margin-left: 2vw;
+                            }
+                        }
+
+                        .links-li:hover {
+                            cursor: pointer;
+                            opacity: 0.75;
+                        }
+                    }
+                }
+            }
+
+            .s1-body {
+                width: 55%;
+
+                .s1-b-header {
+                    display: flex;
+                    justify-content: right;
+                    margin-top: 1vw;
+                    margin-right: 10%;
+                    font-size: 7vw;
+                }
+                .s1-b-form {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    padding-bottom: 1vw;
+
+                    .f-li {
+                        margin-top: 0.5vw;
+                        margin-bottom: 0.5vw;
+                        margin-left: 10%;
+                        margin-right: 10%;
+                    }
+
+                    .message,
+                    .subject {
+                        color: var(--color-primary);
+                        border: 2px solid var(--color-primary);
+                        border-radius: 10px;
+                        padding-top: 0.5vw;
+                        padding-bottom: 0.5vw;
+                        padding-left: 0.5vw;
+                        width: 100%;
+                        font-size: 4vw;
+                    }
+
+                    .f-li-2 {
+                        margin-top: 0.5vw;
+                        margin-bottom: 0.5vw;
+                        margin-left: 10%;
+                        margin-right: 10%;
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: 3vw;
+                        .email {
+                            color: var(--color-primary);
+                            border: 2px solid var(--color-primary);
+                            border-radius: 10px;
+                            padding-top: 0.5vw;
+                            padding-bottom: 0.5vw;
+                            padding-left: 0.5vw;
+                            width: 95%;
+                            height: 9vw;
+                        }
+
+                        .topic {
+                            color: var(--color-primary);
+                            border: 2px solid var(--color-primary);
+                            border-radius: 10px;
+                            padding-top: 0.5vw;
+                            padding-bottom: 0.5vw;
+                            padding-left: 0.5vw;
+                            width: 100%;
+                            height: 9vw;
+                        }
+                    }
+
+                    .btn {
+                        align-self: flex-end;
+                    }
                 }
             }
         }

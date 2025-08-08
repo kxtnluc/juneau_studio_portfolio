@@ -3,6 +3,7 @@
 
     export let type:string = "clipboard";
     export let size:string = "m";
+    export let resizeIconForMobile = true;
 
     let intSize = 16
     let windowWidth = 1920
@@ -33,7 +34,7 @@
         intSize = 32
     }
 
-    if (windowWidth <= 480)
+    if (windowWidth <= 480 && resizeIconForMobile)
     {
       intSize = Math.max(8, intSize - 20);
     }
