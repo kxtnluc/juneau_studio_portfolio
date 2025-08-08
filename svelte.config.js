@@ -1,16 +1,11 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-node';
 
 export default {
   kit: {
     adapter: adapter({
-      pages: 'build',
-      assets: 'build',
-      fallback: 'index.html', // << add this line
-      precompress: false
+      // default options, no need to specify pages/assets
+      out: 'build' // optional: directory for build output, default is 'build'
     }),
-    prerender: {
-      entries: [] // or leave this out entirely if you're using fallback
-    }
+    // You can remove prerender if not needed or configure as necessary
   }
 };
-
