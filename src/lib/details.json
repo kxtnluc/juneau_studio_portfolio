@@ -157,7 +157,7 @@
                         "Visual Studio 2022"
                     ],
                     "about": "Hearth is a Banking and Finance Management application I am developing for Windows, using .NET Maui Blazor Hybrid, SQLite, and the PLAID API for retrieving and authenticating Bank data and transactions.",
-                    "about_long": "Hearth is a Finance Management application. The app allows users to connect their personal bank accounts from accross the internet, all the way from Discover Credit Cards to Venmo Debit Accounts. This functionality is achevied through the integration of the Plaid API, which lets users easily and securely connect their bank account in just a few clicks to my program. The Plaid API is also trusted and used by other software like Robinhood and RocketMoney. It has been a blast working with Plaid and Blazor MAUI to build this program. I work on this project Part-Time on the weekends, so progress is slow, but I cannot wait to unveil it as a finished product.",
+                    "about_long": "Hearth is a Finance Management application. The app allows users to connect their personal bank accounts from accross the internet, all the way from Discover Credit Cards to Venmo Debit Accounts. This functionality is achieved through the integration of the Plaid API, which lets users easily and securely connect their bank account in just a few clicks to my program. The Plaid API is also trusted and used by other software like Robinhood and RocketMoney. It has been a blast working with Plaid and Blazor MAUI to build this program. I work on this project Part-Time on the weekends, so progress is slow, but I cannot wait to unveil it as a finished product.",
                     "bullet_points": [
                         "App has full CRUD Functionality",
                         "Uses Blazor MAUI and SQLite for a compact fullstack development experience",
@@ -169,6 +169,8 @@
                     "to": "present",
                     "starProject": true,
                     "status": "In Development",
+                    "isDemo": "false",
+                    "isRepo": "false",
                     "changelog": {
                         "beta_versions": [
                             {
@@ -237,6 +239,8 @@
                     "to": "8/25",
                     "starProject": false,
                     "status": "Published",
+                    "isDemo": "false",
+                    "isRepo": "false",
                     "changelog": {
                         "beta_versions": [
                             {
@@ -293,7 +297,7 @@
                         "Visual Studio Code"
                     ],
                     "about": "Friendly Flavors is a recipe application where users can share digital cookbooks full of their personal recipes with family and friends!",
-                    "about_long": "Friendly Flavors is a recipe book builder Web App, where users can share digital cookbooks full of their personal recipes with family and friends! The app hosted a sound database of hundereds of ingredients and cooking terms so users could filter, sort, and search up the recipes they desired most.",
+                    "about_long": "Friendly Flavors is a recipe book builder Web App, where users can share digital cookbooks full of their personal recipes with family and friends! The app hosted a sound database of hundreds of ingredients and cooking terms so users could filter, sort, and search up the recipes they desired most.",
                     "bullet_points": [
                         "App has full CRUD functionality using React JSX and Routing.",
                         "Back-end was built using C#, Entity Framework Core, and PostgreSQL"
@@ -304,6 +308,8 @@
                     "to": "04/24",
                     "starProject": false,
                     "status": "Retired",
+                    "isDemo": "false",
+                    "isRepo": "false",
                     "changelog": {
                         "beta_versions": [
                             {

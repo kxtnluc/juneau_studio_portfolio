@@ -235,8 +235,8 @@
 						height: 3px;
 						background-image: linear-gradient(
 							to right,
-							var(--color-orange),
-							var(--color-contrast-lighter)
+							var(--color-contrast-lighter),
+							white
 						);
 						transition: width 250ms ease-out;
 					}
