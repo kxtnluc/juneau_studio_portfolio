@@ -8,6 +8,7 @@
     import CodeLanguageIcons from "../components/icons/CodeLanguageIcons.svelte";
     import JavaScriptIcon from "../components/icons/CodeLanguageIcons.svelte";
     import MiscIcons from "../components/icons/MiscIcons.svelte";
+    import { goto } from '$app/navigation';
 
     const author = data[0].author;
     const resume = data[0].resume;
@@ -38,18 +39,21 @@
             </div>
             <div class="h-footer">
                 <div class="h-buttons">
-                    <Button
-                        size="l"
-                        onClick={() => console.log("go to projects")}
-                    >
-                        Projects
-                    </Button>
-                    <Button
-                        size="l"
-                        onClick={() => console.log("go to hire me")}
-                    >
-                        Contact
-                    </Button>
+                    <a href="/#work-and-projects">
+                        <Button
+                            size="l"
+                        >
+                            Projects
+                        </Button>
+                    </a>
+                    <a href="contact-me">
+                        <Button
+                            size="l"
+                            onClick={() => goto('/contact-me')}
+                        >
+                            Contact
+                        </Button>
+                    </a>
                 </div>
                 <div class="h-icons">
                     <div class="h-f-i-icon h-f-i-email">
@@ -283,6 +287,7 @@
                                         : ""}
                                 >
                                     <a
+                                        class="p-link"
                                         href="/projects/{p.title.toLocaleLowerCase()}"
                                         >{p.title}</a
                                     >
@@ -1255,7 +1260,13 @@
                     justify-content: right;
                     .p-text {
                         align-self: center;
-                        margin-right: 1vw;
+                        padding-right: 1vw;
+                        padding-left: 1vw;
+                        border-radius: 20px;
+                        transition: 300ms;
+                    }
+                    .p-text:hover{
+                        background-color: var(--color-contrast);
                     }
                 }
 

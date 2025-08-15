@@ -47,9 +47,8 @@
                 {p?.about_long}
             </div>
             <div class="footer">
-                <Button icon="playbtn" icon_placement="after">See a Demo</Button
-                >
-                <Button icon="github" icon_placement="after">Repository</Button>
+                <!-- <Button icon="playbtn" icon_placement="after">See a Demo</Button>
+                <Button icon="github" icon_placement="after">Repository</Button> -->
             </div>
         </div>
         <div class="right header-primary">

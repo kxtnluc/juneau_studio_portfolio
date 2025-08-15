@@ -9,7 +9,7 @@
     let subject = "";
     let message = "";
     let status = "";
-    let topic = "Choose a Topic";
+    let topic = "Topic";
 
     async function submitForm() {
         status = "Sending...";
