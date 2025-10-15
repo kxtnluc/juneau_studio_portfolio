@@ -40,4 +40,4 @@ jobs:
       - name: Restart Nginx and Pm2
         run: |
           sudo systemctl restart nginx
-          pm2 restart juneaustudio
+          pm2 restart juneau-studio
