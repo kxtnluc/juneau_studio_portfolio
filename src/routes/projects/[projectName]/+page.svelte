@@ -63,7 +63,7 @@
                 <div class="h-icon">
                     <MiscIcons type="codefile" size="l" />
                 </div>
-                <div class="h-text header-primary">Changelog</div>
+                <h2 class="h-text">Changelog</h2>
             </div>
             <div class="s2-body">
                 {#if p && p.changelog && p.changelog.beta_versions}
@@ -72,9 +72,9 @@
                             <div class="log-version header-title">
                                 {log.version}
                             </div>
-                            <div class="log-title header-primary">
+                            <h2 class="log-title">
                                 {log.title}
-                            </div>
+                            </h2>
                         </div>
                         <ul class="s2-b-ul indent-l">
                             {#each log.log as l}

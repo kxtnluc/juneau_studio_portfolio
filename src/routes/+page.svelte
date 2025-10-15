@@ -1,1312 +1,756 @@
-<!-- color: https://lospec.com/palette-list/autumn-decay -->
-
 <script lang="ts">
     import data from "$lib/details.json";
-    import picture from "$lib/tommy.png";
     import Button from "../components/Button.svelte";
-    import ClipboardIcons from "../components/icons/MiscIcons.svelte";
-    import CodeLanguageIcons from "../components/icons/CodeLanguageIcons.svelte";
-    import JavaScriptIcon from "../components/icons/CodeLanguageIcons.svelte";
     import MiscIcons from "../components/icons/MiscIcons.svelte";
-    import { goto } from '$app/navigation';
+    import CodeLanguageIcons from "../components/icons/CodeLanguageIcons.svelte";
+    import { goto } from "$app/navigation";
 
     const author = data[0].author;
     const resume = data[0].resume;
 </script>
 
 <main class="h-main">
-    <div class="h-section-one">
-        <div class="h-text">
-            <div class="h-header">
-                <div class="h-hello header-secondary">
-                    <span style="color: var(--color-orange);"
-                        >{author.full_name}</span
-                    >
-                </div>
-                <div class="h-title header-title">
-                    <span class="h-first-word">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-text">
+            <div class="hero-header">
+                <h1 class="hero-name">
+                    <span class="name-highlight">{author.full_name}</span>
+                </h1>
+                <div class="hero-title">
+                    <span class="title-first">
                         {author.first_word.toUpperCase()}
                     </span>
-                    <span class="h-second-word">
+                    <span class="title-second">
                         {author.second_word.toUpperCase()}
                     </span>
                 </div>
             </div>
-            <div class="h-body">
-                <div class="h-about">
-                    {author.about}
-                </div>
-            </div>
-            <div class="h-footer">
-                <div class="h-buttons">
+
+            <p class="hero-about">{author.about}</p>
+
+            <div class="hero-footer">
+                <div class="hero-buttons">
                     <a href="/#work-and-projects">
-                        <Button
-                            size="l"
-                        >
-                            Projects
-                        </Button>
+                        <Button size="l">Projects</Button>
                     </a>
-                    <a href="contact-me">
-                        <Button
-                            size="l"
-                            onClick={() => goto('/contact-me')}
-                        >
-                            Contact
-                        </Button>
+                    <a href="/contact-me">
+                        <Button size="l">Contact</Button>
                     </a>
                 </div>
-                <div class="h-icons">
-                    <div class="h-f-i-icon h-f-i-email">
-                        <a href="contact-me" aria-label="contact-me">
-                            <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                ><g id="SVGRepo_bgCarrier" stroke-width="0"
-                                ></g><g
-                                    id="SVGRepo_tracerCarrier"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                ></g><g id="SVGRepo_iconCarrier">
-                                    <g id="style=linear">
-                                        <g id="email">
-                                            <path
-                                                id="vector"
-                                                d="M17 20.5H7C4 20.5 2 19 2 15.5V8.5C2 5 4 3.5 7 3.5H17C20 3.5 22 5 22 8.5V15.5C22 19 20 20.5 17 20.5Z"
-                                                stroke="#ffffff"
-                                                stroke-width="1.5"
-                                                stroke-miterlimit="10"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            ></path>
-                                            <path
-                                                id="vector_2"
-                                                d="M18.7698 7.7688L13.2228 12.0551C12.5025 12.6116 11.4973 12.6116 10.777 12.0551L5.22998 7.7688"
-                                                stroke="#ffffff"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                            ></path>
-                                        </g>
-                                    </g>
-                                </g>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="h-f-i-icon h-f-i-linkedin">
-                        <a
-                            href={author.work_links[0].url}
-                            aria-label="linkedin"
+
+                <div class="hero-socials">
+                    <a
+                        href="/contact-me"
+                        aria-label="Email"
+                        class="social-icon"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
                         >
-                            <svg
-                                class="icon-linkedin"
-                                viewBox="0 0 20 20"
-                                version="1.1"
-                                xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                fill="#ffffff"
-                                ><g id="SVGRepo_bgCarrier" stroke-width="0"
-                                ></g><g
-                                    id="SVGRepo_tracerCarrier"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                ></g><g id="SVGRepo_iconCarrier">
-                                    <title>linkedin [#161]</title>
-                                    <desc>Created with Sketch.</desc>
-                                    <defs> </defs>
-                                    <g
-                                        id="Page-1"
-                                        stroke="none"
-                                        stroke-width="1"
-                                        fill="none"
-                                        fill-rule="evenodd"
-                                    >
-                                        <g
-                                            id="Dribbble-Light-Preview"
-                                            transform="translate(-180.000000, -7479.000000)"
-                                            fill="#ffffff"
-                                        >
-                                            <g
-                                                id="icons"
-                                                transform="translate(56.000000, 160.000000)"
-                                            >
-                                                <path
-                                                    d="M144,7339 L140,7339 L140,7332.001 C140,7330.081 139.153,7329.01 137.634,7329.01 C135.981,7329.01 135,7330.126 135,7332.001 L135,7339 L131,7339 L131,7326 L135,7326 L135,7327.462 C135,7327.462 136.255,7325.26 139.083,7325.26 C141.912,7325.26 144,7326.986 144,7330.558 L144,7339 L144,7339 Z M126.442,7323.921 C125.093,7323.921 124,7322.819 124,7321.46 C124,7320.102 125.093,7319 126.442,7319 C127.79,7319 128.883,7320.102 128.883,7321.46 C128.884,7322.819 127.79,7323.921 126.442,7323.921 L126.442,7323.921 Z M124,7339 L129,7339 L129,7326 L124,7326 L124,7339 Z"
-                                                    id="linkedin-[#161]"
-                                                >
-                                                </path>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </g></svg
-                            >
-                        </a>
-                    </div>
-                    <div class="h-f-i-icon h-f-i-github">
-                        <a
-                            href="https://github.com/kxtnluc"
-                            aria-label="github"
+                            <path
+                                d="M17 20.5H7C4 20.5 2 19 2 15.5V8.5C2 5 4 3.5 7 3.5H17C20 3.5 22 5 22 8.5V15.5C22 19 20 20.5 17 20.5Z"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-miterlimit="10"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M18.7698 7.7688L13.2228 12.0551C12.5025 12.6116 11.4973 12.6116 10.777 12.0551L5.22998 7.7688"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+                    </a>
+                    <a
+                        href={author.work_links[0].url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        class="social-icon"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
                         >
-                            <svg
-                                class="icon-github"
-                                viewBox="0 0 15 15"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                ><g id="SVGRepo_bgCarrier" stroke-width="0"
-                                ></g><g
-                                    id="SVGRepo_tracerCarrier"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                ></g><g id="SVGRepo_iconCarrier">
-                                    <path
-                                        fill-rule="evenodd"
-                                        clip-rule="evenodd"
-                                        d="M7.49936 0.850006C3.82767 0.850006 0.849976 3.8273 0.849976 7.50023C0.849976 10.4379 2.75523 12.9306 5.39775 13.8104C5.73047 13.8712 5.85171 13.6658 5.85171 13.4895C5.85171 13.3315 5.846 12.9135 5.84273 12.3587C3.99301 12.7604 3.60273 11.4671 3.60273 11.4671C3.30022 10.6988 2.86423 10.4942 2.86423 10.4942C2.26044 10.0819 2.90995 10.0901 2.90995 10.0901C3.57742 10.137 3.9285 10.7755 3.9285 10.7755C4.52167 11.7916 5.48512 11.4981 5.86396 11.3279C5.92438 10.8984 6.09625 10.6053 6.28608 10.4391C4.80948 10.2709 3.25695 9.70063 3.25695 7.15241C3.25695 6.42615 3.51618 5.83298 3.94157 5.368C3.87299 5.1998 3.64478 4.52375 4.00689 3.60807C4.00689 3.60807 4.56494 3.42926 5.83538 4.28941C6.36568 4.14204 6.93477 4.06856 7.50018 4.0657C8.06518 4.06856 8.63386 4.14204 9.16498 4.28941C10.4346 3.42926 10.9918 3.60807 10.9918 3.60807C11.3548 4.52375 11.1266 5.1998 11.0584 5.368C11.4846 5.83298 11.7418 6.42615 11.7418 7.15241C11.7418 9.70716 10.1868 10.2693 8.70571 10.4338C8.94412 10.6392 9.15681 11.045 9.15681 11.6655C9.15681 12.5542 9.14865 13.2715 9.14865 13.4895C9.14865 13.6675 9.26867 13.8745 9.60588 13.8095C12.2464 12.9282 14.15 10.4375 14.15 7.50023C14.15 3.8273 11.1723 0.850006 7.49936 0.850006Z"
-                                        fill="#ffffff"
-                                    ></path>
-                                </g></svg
-                            >
-                        </a>
-                    </div>
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                                fill="currentColor"
+                            />
+                        </svg>
+                    </a>
+                    <a
+                        href="https://github.com/kxtnluc"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                        class="social-icon"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608.803.056 1.225.828 1.225.828.893 1.534 2.341 1.09 2.91.833.092-.647.35-1.09.636-1.34-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                fill="currentColor"
+                            />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="h-picture">
-            <div class="h-image-container">
-                <img alt="tommy" src={picture} />
-            </div>
+
+        <div class="hero-collage">
+            <div class="collage-item item-1"><a href="/resume" >Digital Resume</a></div>
+            <div class="collage-item item-2"><a href="/skills">Skills</a></div>
+            <div class="collage-item item-3"><a href="/projects">Projects</a></div>
+            <div class="collage-item item-4"><a href="/">About</a></div>
+            <div class="collage-item item-5"><a href="/contact-me">Contact Me</a></div>
         </div>
-    </div>
-    <div class="h-section-three">
-        <div class="s3-header">
-            <div class="s3-education header-primary">
-                <div class="s3-e-icon">
-                    <MiscIcons size="l" type="school" />
-                </div>
-                <div class="s3-e-text">Education</div>
-            </div>
-        </div>
-        <div class="s3-body">
-            <div class="s3-b-header header-secondary">
-                {resume.education.school_name}
-            </div>
-            <div class="s3-b-body">
-                <div class="b-body-about">
-                    {resume.education.about_short}
-                </div>
-                <div class="b-body-points">
-                    {#each resume.education.foundations as f}
-                        {#if resume.education.foundations.indexOf(f) % 2 === 0}
-                            <div class="b-p-point p-even">
-                                <div class="p-icon p-i-even">
-                                    <MiscIcons type={f.image_name} size="l" />
-                                </div>
-                                <div class="p-text">
-                                    {f.description}
-                                </div>
-                            </div>
-                        {:else}
-                            <div class="b-p-point p-odd">
-                                <div class="p-text">
-                                    {f.description}
-                                </div>
-                                <div class="p-icon p-i-odd">
-                                    <MiscIcons type={f.image_name} size="l" />
-                                </div>
-                            </div>
-                        {/if}
-                    {/each}
-                </div>
-            </div>
-            <div class="s3-b-footer"></div>
-        </div>
-    </div>
-    <div class="h-section-four" id="work-and-projects">
-        <div class="s4-header header-primary">
-            <div class="s4-h-left">
-                <div class="s4-h-icon">
+    </section>
+
+    <!-- Work & Projects Section -->
+    <section class="work-projects-section" id="work-and-projects">
+        <div class="section-headers">
+            <div class="work-header">
+                <div class="header-icon">
                     <MiscIcons type="work" size="l" />
                 </div>
-                <div class="s4-h-text">Work Experience</div>
+                <h2>Work Experience</h2>
             </div>
-            <div class="s4-h-right">
-                <div class="s4-h-text">Projects</div>
-                <div class="s4-h-icon">
+            <div class="projects-header">
+                <h2>Projects</h2>
+                <div class="header-icon">
                     <MiscIcons type="cpu" size="l" />
                 </div>
             </div>
         </div>
-        <div class="s4-body">
-            <div class="s4-body-section-1">
-                {#each resume.work_experience as w}
-                    <div class="s4-body-main">
-                        <div class="s4-b-header">
-                            <div class="s4-b-h-primary">
-                                <div class="p-icon">
-                                    <MiscIcons type={w.icon} size="l" />
+
+        <div class="work-projects-grid">
+            <!-- Work Experience -->
+            <div class="work-column">
+                {#each resume.work_experience as work}
+                    <article class="work-item">
+                        <div class="item-header">
+                            <div class="header-primary">
+                                <div class="item-icon">
+                                    <MiscIcons type={work.icon} size="l" />
                                 </div>
-                                <div class="p-text header-secondary">
-                                    {w.role_title}
-                                </div>
+                                <h3>{work.role_title}</h3>
                             </div>
-                            <div class="s4-b-h-secondary">
-                                <div class="s-company header-tertiary">
-                                    {w.company}
-                                </div>
-                                <div class="s-date-range">
-                                    {w.from} - {w.to}
-                                </div>
+                            <div class="header-secondary">
+                                <span class="company">{work.company}</span>
+                                <span class="date-range"
+                                    >{work.from} - {work.to}</span
+                                >
                             </div>
                         </div>
-                        <div class="s4-b-body">
-                            <div class="s4-b-b-text">
-                                {w.about}
-                            </div>
-                        </div>
-                        <div class="s4-b-footer">
-                            {#each resume.primary_skills.filter( (ps) => w.skills.includes(ps.shorthand), ) as s}
-                                <div class="f-icon">
+                        <p class="item-description">{work.about}</p>
+                        <div class="item-skills">
+                            {#each resume.primary_skills.filter( (ps) => work.skills.includes(ps.shorthand), ) as skill}
+                                <div class="skill-badge">
                                     <CodeLanguageIcons
                                         size="s"
-                                        language={s.shorthand}
+                                        language={skill.shorthand}
                                     />
                                 </div>
                             {/each}
                         </div>
-                    </div>
+                    </article>
                 {/each}
             </div>
-            <div class="s4-body-section-2">
-                {#each resume.projects as p}
-                    <div class="s4-body-main">
-                        <div class="s4-b2-header">
-                            <div class="s4-b2-h-primary">
-                                <div
-                                    class="p-text header-secondary"
-                                    style={p.starProject
-                                        ? "color: var(--color-yellow)"
-                                        : ""}
-                                >
+
+            <!-- Projects -->
+            <div class="projects-column">
+                {#each resume.projects as project}
+                    <article class="project-item">
+                        <div class="item-header">
+                            <div class="header-primary">
+                                <h3 class:star={project.starProject}>
                                     <a
-                                        class="p-link"
-                                        href="/projects/{p.title.toLocaleLowerCase()}"
-                                        >{p.title}</a
+                                        href="/projects/{project.title.toLowerCase()}"
+                                        >{project.title}</a
                                     >
-                                </div>
+                                </h3>
                                 <div
-                                    class="p-icon"
-                                    style={p.starProject
-                                        ? "color: var(--color-yellow)"
-                                        : ""}
+                                    class="item-icon"
+                                    class:star={project.starProject}
                                 >
-                                    <MiscIcons type={p.icon} size="l" />
+                                    <MiscIcons type={project.icon} size="l" />
                                 </div>
                             </div>
-                            <div class="s4-b2-h-secondary">
-                                <div class="s-date-range">
-                                    {p.from} - {p.to}
-                                </div>
-                                <div class="s-company header-tertiary">
-                                    {p.platform}
-                                </div>
+                            <div class="header-secondary">
+                                <span class="date-range"
+                                    >{project.from} - {project.to}</span
+                                >
+                                <span class="platform">{project.platform}</span>
                             </div>
                         </div>
-                        <div class="s4-b2-body">
-                            <div class="s4-b2-b-text">
-                                {p.about}
-                            </div>
-                        </div>
-                        <div class="s4-b2-footer">
-                            {#each resume.primary_skills.filter( (ps) => p.skills.includes(ps.shorthand), ) as s}
-                                <div class="f-icon">
+                        <p class="item-description">{project.about}</p>
+                        <div class="item-skills">
+                            {#each resume.primary_skills.filter( (ps) => project.skills.includes(ps.shorthand), ) as skill}
+                                <div class="skill-badge">
                                     <CodeLanguageIcons
                                         size="s"
-                                        language={s.shorthand}
+                                        language={skill.shorthand}
                                     />
                                 </div>
                             {/each}
                         </div>
+                    </article>
+                {/each}
+            </div>
+        </div>
+    </section>
+    <!-- Education Section -->
+
+    <section class="education-section">
+        <div class="section-header">
+            <div class="header-icon">
+                <MiscIcons type="school" size="l" />
+            </div>
+            <h2>Education</h2>
+        </div>
+        <div class="education-content">
+            <h3 class="school-name">{resume.education.school_name}</h3>
+            <p class="education-about">{resume.education.about_short}</p>
+            <div class="foundations-grid">
+                {#each resume.education.foundations as foundation, index}
+                    <div class="foundation-item" class:even={index % 2 === 0}>
+                        <div class="foundation-icon">
+                            <MiscIcons type={foundation.image_name} size="l" />
+                        </div>
+                        <span class="foundation-text"
+                            >{foundation.description}</span
+                        >
                     </div>
                 {/each}
             </div>
         </div>
-        <div class="s4-footer"></div>
-    </div>
-    <div class="h-section-two">
-        <div class="s2-text">
-            <div class="s2-header">
-                <div class="s2-skills header-primary">
-                    <div class="s2-s-icon">
-                        <MiscIcons type="code" size="l" />
-                    </div>
-                    <div class="s2-s-text">Languages & Frameworks</div>
-                </div>
-            </div>
-            <div class="s2-body">
-                <div class="s2-carousel-wrapper">
-                    <div class="s2-carousel-track">
-                        {#each resume.primary_skills as s}
-                            <div class="s2-ul">
-                                <div class="ic-icon-container">
-                                    <CodeLanguageIcons
-                                        language={s.shorthand}
-                                        size="l"
-                                    />
-                                </div>
-                                <div class="s2-li-name">
-                                    <span class="li-name">{s.name}</span>
-                                </div>
-                            </div>
-                        {/each}
-                    </div>
-                </div>
-            </div>
-            <div class="2-footer"></div>
-        </div>
-    </div>
+    </section>
 </main>
 
-<!------------------------------------------------------------------------ CSS ------------------------------------------------------------------------->
 <style>
-    @media (max-width: 480px) {
-        /* Styles for mobile phones */
-        /* Styles for desktop */
-        .h-section-one,
-        .h-section-two,
-        .h-section-three,
-        .h-section-four {
-            margin-left: 3%;
-            margin-right: 3%;
-            margin-bottom: 3rem;
+    /* Base Styles */
+    .h-main {
+        max-width: 1750px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    section {
+        margin-bottom: 5rem;
+    }
+
+    .section-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        font-size: var(--header-primary, 2rem);
+        font-weight: 700;
+    }
+
+    .header-icon {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        background-color: var(--color-contrast, #fff);
+        border-radius: 2rem;
+        padding: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 5rem;
+    }
+
+    .hero-text {
+        color: var(--color-primary, #1a1a2e);
+    }
+
+    .hero-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-name {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        margin-bottom: 0.5rem;
+    }
+
+    .name-highlight {
+        color: var(--color-orange, #ff6b35);
+    }
+
+    .hero-title {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        font-weight: 900;
+        line-height: 1;
+    }
+
+    .title-first {
+        display: block;
+    }
+
+    .title-second {
+        display: block;
+        color: var(--color-orange, #ff6b35);
+    }
+
+    .hero-about {
+        font-style: italic;
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        margin: 1.5rem 0;
+        line-height: 1.6;
+    }
+
+    .hero-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .hero-socials {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .social-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-primary, #1a1a2e);
+        color: var(--color-contrast, #fff);
+        border-radius: 50%;
+        padding: 0.75rem;
+        transition: opacity 0.3s;
+    }
+
+    .social-icon:hover {
+        opacity: 0.8;
+    }
+
+    .social-icon svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Hero Collage */
+    .hero-collage {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1rem;
+        grid-template-areas:
+            "item-1 item-1"
+            "item-2 item-3"
+            "item-4 item-5";
+        min-height: 300px;
+    }
+
+    .collage-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        color: var(--color-contrast, #fff);
+        background-color: var(--color-wood, #8b5a3c);
+        text-align: center;
+        border-radius: 1rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+        transition:
+            transform 0.3s,
+            opacity 0.3s;
+    }
+
+    .collage-item:hover {
+        transform: scale(1.02);
+        opacity: 0.9;
+    }
+
+    .item-1 {
+        grid-area: item-1;
+        background: linear-gradient(
+                320deg,
+                rgba(51, 51, 51, 1),
+                rgba(68, 68, 68, 0.6)
+            ),
+            url("src/lib/resume-page.png");
+    }
+    .item-2 {
+        grid-area: item-2;
+
+        background: linear-gradient(
+                320deg,
+                rgba(51, 51, 51, 1),
+                rgba(68, 68, 68, 0.6)
+            ),
+            url("src/lib/skills-page.png");
+
+    }
+    .item-3 {
+        grid-area: item-3;
+
+        background: linear-gradient(
+                320deg,
+                rgba(51, 51, 51, 1),
+                rgba(68, 68, 68, 0.6)
+            ),
+            url("src/lib/github-overlay.png");
+    }
+    .item-4 {
+        grid-area: item-4;
+    }
+    .item-5 {
+        grid-area: item-5;
+
+        background: linear-gradient(
+                320deg,
+                rgba(51, 51, 51, 1),
+                rgba(68, 68, 68, 0.6)
+            ),
+            url("src/lib/contact-me-page.png");
+    }
+
+    .item-1,
+    .item-2,
+    .item-3,
+    .item-4,
+    .item-5 {
+        background-size: cover; /* Make image fill the box */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Avoid repeating */
+        border-radius: 8px;
+        transition: 300ms;
+        color: white;
+        position: relative;
+        cursor: pointer;
+    }
+
+    /* Skills Section */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1.5rem;
+        background-color: var(--color-primary-darker, #0f0f1e);
+        border-radius: 1.5rem;
+        padding: 2rem;
+        border: 4px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .skill-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        transition: opacity 0.3s;
+    }
+
+    .skill-item:hover {
+        opacity: 0.7;
+    }
+
+    .skill-name {
+        font-style: italic;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    /* Education Section */
+    .education-content {
+        background-color: var(--color-contrast, #fff);
+        color: var(--color-primary, #1a1a2e);
+        border-radius: 2rem;
+        padding: 2rem;
+        border: 5px solid var(--color-primary-darker, #0f0f1e);
+    }
+
+    .school-name {
+        font-size: var(--header-secondary, 1.75rem);
+        margin-bottom: 1rem;
+    }
+
+    .education-about {
+        display: inline-block;
+        background-color: var(--color-contrast-lighter, #f5f5f5);
+        padding: 0.75rem 1.5rem;
+        border-radius: 1.5rem;
+        font-style: italic;
+        margin-bottom: 2rem;
+    }
+
+    .foundations-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .foundation-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+        background-color: var(--color-orange, #ff6b35);
+        color: var(--color-contrast, #fff);
+        border-radius: 2rem;
+        font-weight: 600;
+        transition: opacity 0.3s;
+    }
+
+    .foundation-item:hover {
+        opacity: 0.85;
+    }
+
+    .foundation-item.even {
+        border-top-left-radius: 3rem;
+        border-bottom-left-radius: 3rem;
+    }
+
+    .foundation-item:not(.even) {
+        flex-direction: row-reverse;
+        text-align: right;
+        border-top-right-radius: 3rem;
+        border-bottom-right-radius: 3rem;
+    }
+
+    /* Work & Projects Section */
+    .section-headers {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+        font-size: var(--header-primary, 2rem);
+        font-weight: 700;
+    }
+
+    .work-header,
+    .projects-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .work-projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .work-item,
+    .project-item {
+        margin-bottom: 3rem;
+        position: relative;
+    }
+
+    .item-header {
+        margin-bottom: 1rem;
+    }
+
+    .item-header::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -1rem;
+        width: 30%;
+        height: 8px;
+        background-color: var(--color-primary-darker, #0f0f1e);
+        border-radius: 1rem;
+    }
+
+    .project-item .item-header::before {
+        left: auto;
+        right: 0;
+    }
+
+    .header-primary {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: var(--color-orange, #ff6b35);
+        margin-bottom: 0.5rem;
+    }
+
+    .header-primary h3 {
+        font-size: var(--header-secondary, 1.5rem);
+        margin: 0;
+    }
+
+    .header-primary h3.star,
+    .item-icon.star {
+        color: var(--color-yellow, #ffd700);
+    }
+
+    .header-primary a {
+        color: inherit;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        padding: 0.25rem 0.75rem;
+        border-radius: 0.5rem;
+    }
+
+    .header-primary a:hover {
+        background-color: var(--color-contrast, #fff);
+    }
+
+    .header-secondary {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.95rem;
+        flex-wrap: wrap;
+    }
+
+    .company,
+    .platform {
+        font-size: var(--header-tertiary, 1.25rem);
+        font-weight: 600;
+    }
+
+    .date-range {
+        font-style: italic;
+        opacity: 0.8;
+    }
+
+    .item-description {
+        line-height: 1.6;
+        margin: 1rem 0;
+    }
+
+    .work-column .item-description {
+        margin-right: 25%;
+    }
+
+    .projects-column .item-description {
+        margin-left: 25%;
+        text-align: right;
+    }
+
+    .item-skills {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+
+    .projects-column .item-skills {
+        justify-content: flex-end;
+    }
+
+    .projects-column .header-primary {
+        flex-direction: row-reverse;
+    }
+
+    .projects-column .header-secondary {
+        flex-direction: row-reverse;
+    }
+
+    /* Tablet Styles */
+    @media (min-width: 768px) {
+        .h-main {
+            padding: 0 2rem;
         }
 
-        .h-section-one {
-            /* border: 5px solid black; */
-            display: flex;
-            justify-content: left;
-            background-color: var(--color-contrast);
-            /* background-color: red; */
-            margin-top: 5vw;
-
-            border-radius: 3vw;
-
-            .h-text {
-                padding-top: 2em;
-                padding-bottom: 2em;
-                color: var(--color-primary);
-                /* background-color: red; */
-                align-self: center;
-                width: 100%;
-                font-size: 4vw;
-                padding-left: 4vw;
-                padding-right: 4vw;
-
-                .h-header {
-                    .h-hello {
-                        font-size: 7vw;
-                    }
-                    .h-title {
-                        line-height: 1;
-                        font-size: 12vw;
-                        .h-second-word {
-                            color: var(--color-orange);
-                        }
-                    }
-                }
-
-                .h-body {
-                    .h-about {
-                        margin-top: 1vw;
-                        font-style: italic;
-                    }
-                }
-
-                .h-footer {
-                    display: flex;
-                    margin-top: 4vw;
-                    justify-content: center;
-                    /* border: 4px solid rgb(0, 153, 255); */
-                    .h-buttons {
-                        display: none;
-                    }
-
-                    .h-icons {
-                        align-self: center;
-                        display: flex;
-                        .h-f-i-linkedin {
-                            margin-right: 10vw;
-                            margin-left: 10vw;
-                            width: 3.5rem;
-                            background-color: var(--color-primary);
-                            border-radius: 100px;
-                            padding: 15px;
-                        }
-
-                        .h-f-i-github {
-                            margin-left: 0.65vw;
-                            margin-right: 0.65vw;
-                            width: 3.5rem;
-                            background-color: var(--color-primary);
-                            border-radius: 100px;
-                            padding: 10px;
-                        }
-
-                        .h-f-i-email {
-                            margin-left: 0.65vw;
-                            margin-right: 0.65vw;
-                            width: 3.5rem;
-                            background-color: var(--color-primary);
-                            border-radius: 100px;
-                            padding: 10px;
-                        }
-
-                        .h-f-i-icon {
-                            transition: 300ms;
-                        }
-                        .h-f-i-icon:hover {
-                            opacity: 85%;
-                            cursor: pointer;
-                        }
-                    }
-                }
-            }
-
-            .h-picture {
-                /* background-color: blue; */
-                display: none;
-            }
+        .hero-footer {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .h-section-two {
-            /* border: 5px solid var(--color-contrast); */
-            /* background-color: var(--color-contrast); */
-            /* color: var(--color-primary); */
-            /* border-radius: 25px; */
-            margin-top: 1vw;
-
-            .s2-text {
-                .s2-header {
-                    .s2-skills {
-                        font-size: 8vw;
-                        margin-top: 2vw;
-                        margin-left: 2vw;
-                        display: flex;
-                        /* background-color: red; */
-                        .s2-s-icon {
-                            margin-right: 5vw;
-                            align-self: center;
-                        }
-                    }
-                }
-
-                .s2-body {
-                    .s2-carousel-wrapper {
-                        background-color: var(--color-primary-darker);
-                        border-radius: 25px;
-                        border: 4px solid rgba(0, 0, 0, 0.322);
-
-                        display: flex;
-                        justify-content: center;
-                        .s2-carousel-track {
-                            /* border: 1px solid red; */
-                            display: flex;
-                            justify-content: space-between;
-                            flex-flow: row wrap;
-                            width: 90vw;
-
-                            .ic-icon-container {
-                                margin-left: 1.5vw;
-                                margin-right: 1.5vw;
-                                margin-top: 0.5vw;
-                                margin-bottom: 0.5vw;
-                                padding-left: 1.5vw;
-                                padding-right: 1.5vw;
-                                padding-top: 0.5vw;
-                                padding-bottom: 0.5vw;
-                                transition: 350ms;
-                            }
-
-                            .s2-li-name {
-                                text-align: center;
-                                font-style: italic;
-                                transition: 300ms;
-                            }
-
-                            .s2-ul {
-                                transition: 300ms;
-                                margin-bottom: 1.25vw;
-                            }
-
-                            .s2-ul:hover {
-                                opacity: 65%;
-                            }
-                        }
-                    }
-                }
-            }
+        .foundations-grid {
+            grid-template-columns: repeat(2, 1fr);
         }
 
-        .h-section-three {
-            /* border: 5px solid black; */
-            /* background-color: var(--color-contrast); */
-            /* color: var(--color-primary); */
-            /* border-radius: 25px; */
-            margin-top: 1vw;
-
-            .s3-header {
-                margin-left: 5vw;
-                margin-bottom: 3vw;
-
-                .s3-education {
-                    display: flex;
-                    /* background-color: rebeccapurple; */
-                    .s3-e-icon {
-                        margin-right: 5vw;
-                        align-self: center;
-                    }
-
-                    .s3-e-text {
-                        font-size: 10vw;
-                        align-self: center;
-                    }
-                }
-            }
-
-            .s3-body {
-                border: 5px solid var(--color-primary-darker);
-                padding-top: 1vw;
-                padding-left: 1vw;
-                padding-right: 1vw;
-                padding-bottom: 1vw;
-
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: space-around;
-                background-color: var(--color-contrast);
-                color: var(--color-primary);
-
-                border-radius: 30px;
-
-                .s3-b-header {
-                    font-size: 6vw;
-                    margin-left: 1vw;
-                    margin-top: 2vw;
-                }
-
-                .s3-b-body {
-                    display: flex;
-                    flex-flow: column nowrap;
-                    justify-content: center;
-                    padding-bottom: 2vw;
-
-                    .b-body-about {
-                        font-style: italic;
-                        background-color: var(--color-contrast-lighter);
-                        border-radius: 25px;
-                        padding: 0.5vw 1.5vw 0.5vw 1.5vw;
-                        font-size: var(--header-tertiary);
-                        width: fit-content;
-                        font-size: 3vw;
-                    }
-
-                    .b-body-points {
-                        font-weight: 700;
-                        display: flex;
-                        flex-flow: row wrap;
-                        align-self: center;
-                        width: 58vw;
-
-                        .b-p-point {
-                            display: none;
-                            /* this needs to be changed later */
-                            font-size: 3vw;
-                            padding-top: 1vw;
-                            padding-bottom: 1vw;
-                            margin-right: 3vw;
-                            margin-left: 3vw;
-                            margin-top: 1vw;
-                            margin-bottom: 1vw;
-                            height: 5vw;
-                            width: 23vw;
-                            background-color: var(--color-orange);
-                            color: var(--color-contrast);
-                            /* display: flex; */
-                            justify-content: space-between;
-                            transition: 300ms;
-                        }
-
-                        .b-p-point:hover {
-                            opacity: 85%;
-                        }
-
-                        .p-even {
-                            align-items: center;
-                            border-bottom-left-radius: 100px;
-                            border-top-left-radius: 100px;
-                            border-bottom-right-radius: 25px;
-                            border-top-right-radius: 25px;
-                        }
-
-                        .p-odd {
-                            align-items: center;
-                            text-align: right;
-                            border-bottom-left-radius: 25px;
-                            border-top-left-radius: 25px;
-                            border-bottom-right-radius: 100px;
-                            border-top-right-radius: 100px;
-                        }
-
-                        .p-icon {
-                            align-self: center;
-                            display: none;
-                        }
-
-                        .p-i-even {
-                            margin-left: 2vw;
-                            margin-right: 2vw;
-                        }
-
-                        .p-i-odd {
-                            margin-left: 2vw;
-                            margin-right: 2vw;
-                        }
-                    }
-                }
-            }
-        }
-
-        .h-section-four {
-            margin-top: 2vw;
-            /* background-color: black; */
-
-            .s4-header {
-                margin-left: 2vw;
-                margin-right: 2vw;
-                display: flex;
-                font-size: 5vw;
-                justify-content: space-between;
-                padding-bottom: 5vw;
-                .s4-h-left {
-                    /* background-color: blue; */
-                    display: flex;
-                    .s4-h-icon {
-                        margin-right: 2rem;
-                        align-self: center;
-                    }
-                }
-                .s4-h-right {
-                    /* background-color: red; */
-                    text-align: right;
-                    display: flex;
-                    .s4-h-text {
-                        align-self: center;
-                    }
-                    .s4-h-icon {
-                        margin-left: 2rem;
-                        align-self: center;
-                    }
-                }
-            }
-
-            .s4-body {
-                display: flex;
-                justify-content: space-between;
-
-                .s4-body-main {
-                    margin-bottom: 3vw;
-                }
-
-                .s4-body-section-1 {
-                    width: 50%;
-                }
-
-                .s4-body-section-2 {
-                    text-align: right;
-                    width: 50%;
-                }
-
-                .p-text {
-                    font-size: 5vw;
-                }
-
-                .s4-b-header {
-                    position: relative;
-                    margin-top: 2vw;
-                    .s4-b-h-primary {
-                        color: var(--color-orange);
-                        display: flex;
-                        .p-text {
-                            align-self: center;
-                            margin-left: 1vw;
-                        }
-                        .p-icon {
-                            align-self: center;
-                            margin-right: 3vw;
-                        }
-                    }
-
-                    .s4-b-h-secondary {
-                        display: flex;
-                        margin-top: 1.5vw;
-
-                        .s-company {
-                            font-size: 4vw;
-                        }
-                        .s-date-range {
-                            align-self: center;
-                            margin-left: 1vw;
-                            font-size: 3vw;
-                            font-style: italic;
-                        }
-                    }
-                }
-
-                .s4-b-header::after {
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    top: -20px;
-                    border-radius: 20px;
-                    width: 30vw;
-                    height: 5px;
-                    margin-top: 2vw;
-                    background-color: var(--color-primary-darker);
-                }
-
-                .s4-b-b-text {
-                    margin-right: 25%;
-                    font-size: 2.5vw;
-                }
-
-                .s4-b-footer {
-                    margin-top: 1.5vw;
-                    display: flex;
-
-                    .f-icon {
-                        display: none;
-                        /* This should change */
-                        margin-right: 1vw;
-                        margin-bottom: 2.5vw;
-                    }
-                }
-            }
-        }
-
-        .s4-body-section-2 {
-            .s4-b2-header {
-                color: var(--color-contrast);
-                position: relative;
-                margin-top: 2vw;
-                .s4-b2-h-primary {
-                    color: var(--color-orange);
-                    display: flex;
-                    justify-content: right;
-                    .p-text {
-                        align-self: center;
-                        margin-right: 1vw;
-                    }
-                    .p-icon {
-                        align-self: center;
-                        margin-left: 3vw;
-                    }
-                }
-
-                .s4-b2-h-secondary {
-                    display: flex;
-                    justify-content: right;
-                    margin-top: 1.5vw;
-
-                    .s-date-range {
-                        font-size: 2.5vw;
-                        align-self: center;
-                        margin-right: 1vw;
-                        font-style: italic;
-                        display: none;
-                    }
-
-                    .s-company {
-                        font-size: 3vw;
-                    }
-                }
-            }
-
-            .s4-b2-header::after {
-                content: "";
-                position: absolute;
-                right: 0;
-                top: -20px;
-                border-radius: 20px;
-                width: 30vw;
-                height: 5px;
-                margin-top: 2vw;
-                background-color: var(--color-primary-darker);
-            }
-
-            .s4-b2-b-text {
-                margin-left: 25%;
-                font-size: 2.5vw;
-            }
-
-            .s4-b2-footer {
-                margin-top: 1.5vw;
-                display: flex;
-                justify-content: right;
-                .f-icon {
-                    display: none;
-                    /* this should change */
-                    margin-right: 1vw;
-                    margin-bottom: 0.5vw;
-                }
-            }
+        .hero-collage {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas:
+                "item-1 item-1 item-2"
+                "item-1 item-1 item-3"
+                "item-4 item-5 item-5";
+            min-height: 400px;
         }
     }
 
-    @media (min-width: 480px) {
-        /* Styles for desktop */
-        .h-section-one,
-        .h-section-two,
-        .h-section-three,
-        .h-section-four {
-            margin-left: 5%;
-            margin-right: 5%;
-            margin-bottom: 5rem;
+    /* Desktop Styles */
+    @media (min-width: 1024px) {
+        .hero-section {
+            grid-template-columns: 1fr 1fr;
+            padding: 2rem;
         }
 
-        .h-section-one {
-            /* border: 5px solid black; */
-            display: flex;
-            justify-content: space-around;
-            background-color: var(--color-contrast);
-            /* background-color: red; */
-            margin-top: 2vw;
-
-            border-radius: 3vw;
-
-            .h-text {
-                padding-top: 2em;
-                padding-bottom: 2em;
-                color: var(--color-primary);
-                /* background-color: red; */
-                align-self: center;
-                width: 45%;
-
-                .h-header {
-                    .h-hello {
-                    }
-                    .h-title {
-                        line-height: 1;
-                        .h-second-word {
-                            color: var(--color-orange);
-                        }
-                    }
-                }
-
-                .h-body {
-                    .h-about {
-                        margin-top: 1vw;
-                        font-style: italic;
-                    }
-                }
-
-                .h-footer {
-                    display: flex;
-                    margin-top: 1vw;
-                    justify-content: space-between;
-                    /* border: 4px solid rgb(0, 153, 255); */
-                    .h-buttons {
-                        display: flex;
-                        justify-content: space-between;
-                        width: 20rem;
-                        /* border: 2px solid blue; */
-                        align-self: center;
-                    }
-
-                    .h-icons {
-                        align-self: center;
-                        display: flex;
-                        .h-f-i-linkedin {
-                            margin-right: 0.65vw;
-                            margin-left: 0.65vw;
-                            width: 3.5rem;
-                            background-color: var(--color-primary);
-                            border-radius: 100px;
-                            padding: 15px;
-                        }
-                        .h-f-i-github {
-                            margin-left: 0.65vw;
-                            margin-right: 0.65vw;
-                            width: 3.5rem;
-                            background-color: var(--color-primary);
-                            border-radius: 100px;
-                            padding: 10px;
-                        }
-
-                        .h-f-i-email {
-                            margin-left: 0.65vw;
-                            margin-right: 0.65vw;
-                            width: 3.5rem;
-                            background-color: var(--color-primary);
-                            border-radius: 100px;
-                            padding: 10px;
-                        }
-
-                        .h-f-i-icon {
-                            transition: 300ms;
-                        }
-                        .h-f-i-icon:hover {
-                            opacity: 85%;
-                            cursor: pointer;
-                        }
-                    }
-                }
-            }
-
-            .h-picture {
-                /* background-color: blue; */
-                align-self: center;
-                width: 43%;
-            }
-        }
-
-        .h-section-two {
-            /* border: 5px solid var(--color-contrast); */
-            /* background-color: var(--color-contrast); */
-            /* color: var(--color-primary); */
-            /* border-radius: 25px; */
-            margin-top: 1vw;
-
-            .s2-text {
-                .s2-header {
-                    .s2-skills {
-                        margin-top: 2vw;
-                        margin-left: 2vw;
-                        display: flex;
-                        /* background-color: red; */
-                        .s2-s-icon {
-                            margin-right: 1.5vw;
-                            align-self: center;
-                        }
-                    }
-                }
-
-                .s2-body {
-                    .s2-carousel-wrapper {
-                        background-color: var(--color-primary-darker);
-                        border-radius: 25px;
-                        border: 4px solid rgba(0, 0, 0, 0.322);
-
-                        display: flex;
-                        justify-content: center;
-                        .s2-carousel-track {
-                            /* border: 1px solid red; */
-                            display: flex;
-                            justify-content: space-between;
-                            flex-flow: row wrap;
-                            width: 75vw;
-
-                            .ic-icon-container {
-                                margin-left: 1.5vw;
-                                margin-right: 1.5vw;
-                                margin-top: 0.5vw;
-                                margin-bottom: 0.5vw;
-                                padding-left: 1.5vw;
-                                padding-right: 1.5vw;
-                                padding-top: 0.5vw;
-                                padding-bottom: 0.5vw;
-                                transition: 350ms;
-                            }
-
-                            .s2-li-name {
-                                text-align: center;
-                                font-style: italic;
-                                transition: 300ms;
-                            }
-
-                            .s2-ul {
-                                transition: 300ms;
-                                margin-bottom: 1.25vw;
-                            }
-
-                            .s2-ul:hover {
-                                opacity: 65%;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        .h-section-three {
-            /* border: 5px solid black; */
-            /* background-color: var(--color-contrast); */
-            /* color: var(--color-primary); */
-            /* border-radius: 25px; */
-            margin-top: 1vw;
-
-            .s3-header {
-                margin-left: 2vw;
-
-                .s3-education {
-                    display: flex;
-                    /* background-color: rebeccapurple; */
-                    .s3-e-icon {
-                        margin-right: 1.5vw;
-                        align-self: center;
-                    }
-
-                    .s3-e-text {
-                        align-self: center;
-                    }
-                }
-            }
-
-            .s3-body {
-                border: 5px solid var(--color-primary-darker);
-                padding-top: 1vw;
-                padding-left: 1vw;
-                padding-right: 1vw;
-                padding-bottom: 1vw;
-
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: space-around;
-                background-color: var(--color-contrast);
-                color: var(--color-primary);
-
-                border-radius: 30px;
-
-                .s3-b-body {
-                    display: flex;
-                    flex-flow: column nowrap;
-                    justify-content: center;
-
-                    .b-body-about {
-                        font-style: italic;
-                        background-color: var(--color-contrast-lighter);
-                        border-radius: 25px;
-                        padding: 0.5vw 1.5vw 0.5vw 1.5vw;
-                        font-size: var(--header-tertiary);
-                        width: fit-content;
-                    }
-
-                    .b-body-points {
-                        font-weight: 700;
-                        display: flex;
-                        flex-flow: row wrap;
-                        align-self: center;
-                        width: 58vw;
-
-                        .b-p-point {
-                            font-size: 0.8vw;
-                            padding-top: 1vw;
-                            padding-bottom: 1vw;
-                            margin-right: 3vw;
-                            margin-left: 3vw;
-                            margin-top: 1vw;
-                            margin-bottom: 1vw;
-                            height: 5vw;
-                            width: 23vw;
-                            background-color: var(--color-orange);
-                            color: var(--color-contrast);
-                            display: flex;
-                            justify-content: space-between;
-                            transition: 300ms;
-                        }
-
-                        .b-p-point:hover {
-                            opacity: 85%;
-                        }
-
-                        .p-even {
-                            align-items: center;
-                            border-bottom-left-radius: 100px;
-                            border-top-left-radius: 100px;
-                            border-bottom-right-radius: 25px;
-                            border-top-right-radius: 25px;
-                        }
-
-                        .p-odd {
-                            align-items: center;
-                            text-align: right;
-                            border-bottom-left-radius: 25px;
-                            border-top-left-radius: 25px;
-                            border-bottom-right-radius: 100px;
-                            border-top-right-radius: 100px;
-                        }
-
-                        .p-icon {
-                            align-self: center;
-                        }
-
-                        .p-i-even {
-                            margin-left: 2vw;
-                            margin-right: 2vw;
-                        }
-
-                        .p-i-odd {
-                            margin-left: 2vw;
-                            margin-right: 2vw;
-                        }
-                    }
-                }
-            }
-        }
-
-        .h-section-four {
-            margin-top: 2vw;
-            /* background-color: black; */
-
-            .s4-header {
-                margin-left: 2vw;
-                margin-right: 2vw;
-                display: flex;
-                justify-content: space-between;
-
-                .s4-h-left {
-                    /* background-color: blue; */
-                    display: flex;
-                    .s4-h-icon {
-                        margin-right: 2rem;
-                        align-self: center;
-                    }
-                }
-                .s4-h-right {
-                    /* background-color: red; */
-                    text-align: right;
-                    display: flex;
-                    .s4-h-icon {
-                        margin-left: 2rem;
-                        align-self: center;
-                    }
-                }
-            }
-
-            .s4-body {
-                display: flex;
-                justify-content: space-between;
-
-                .s4-body-main {
-                    margin-bottom: 3vw;
-                }
-
-                .s4-body-section-1 {
-                    width: 50%;
-                }
-
-                .s4-body-section-2 {
-                    text-align: right;
-                    width: 50%;
-                }
-
-                .s4-b-header {
-                    position: relative;
-                    margin-top: 2vw;
-                    .s4-b-h-primary {
-                        color: var(--color-orange);
-                        display: flex;
-                        .p-text {
-                            align-self: center;
-                            margin-left: 1vw;
-                        }
-                    }
-
-                    .s4-b-h-secondary {
-                        display: flex;
-                        margin-top: 0.5vw;
-
-                        .s-date-range {
-                            align-self: center;
-                            margin-left: 1vw;
-
-                            font-style: italic;
-                        }
-                    }
-                }
-
-                .s4-b-header::after {
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    top: -20px;
-                    border-radius: 20px;
-                    width: 30vw;
-                    height: 8px;
-                    background-color: var(--color-primary-darker);
-                }
-
-                .s4-b-b-text {
-                    margin-right: 25%;
-                }
-
-                .s4-b-footer {
-                    margin-top: 1.5vw;
-                    display: flex;
-
-                    .f-icon {
-                        margin-right: 1vw;
-                        margin-bottom: 0.5vw;
-                    }
-                }
-            }
-        }
-
-        .s4-body-section-2 {
-            .s4-b2-header {
-                color: var(--color-contrast);
-                position: relative;
-                margin-top: 2vw;
-                .s4-b2-h-primary {
-                    color: var(--color-orange);
-                    display: flex;
-                    justify-content: right;
-                    .p-text {
-                        align-self: center;
-                        padding-right: 1vw;
-                        padding-left: 1vw;
-                        border-radius: 20px;
-                        transition: 300ms;
-                    }
-                    .p-text:hover{
-                        background-color: var(--color-contrast);
-                    }
-                }
-
-                .s4-b2-h-secondary {
-                    display: flex;
-                    justify-content: right;
-                    margin-top: 0.5vw;
-
-                    .s-date-range {
-                        align-self: center;
-                        margin-right: 1vw;
-                        font-style: italic;
-                    }
-                }
-            }
-
-            .s4-b2-header::after {
-                content: "";
-                position: absolute;
-                right: 0;
-                top: -20px;
-                border-radius: 20px;
-                width: 30vw;
-                height: 8px;
-                background-color: var(--color-primary-darker);
-            }
-
-            .s4-b2-b-text {
-                margin-left: 25%;
-            }
-
-            .s4-b2-footer {
-                margin-top: 1.5vw;
-                display: flex;
-                justify-content: right;
-                .f-icon {
-                    margin-right: 1vw;
-                    margin-bottom: 0.5vw;
-                }
-            }
+        .work-projects-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
         }
     }
+
+    /* Mobile Adjustments */
+    @media (max-width: 767px) {
+        .item-header::before {
+            width: 50%;
+        }
+
+        .work-column .item-description,
+        .projects-column .item-description {
+            margin: 1rem 0;
+            text-align: left;
+        }
+
+        .projects-column .item-skills {
+            justify-content: flex-start;
+        }
+
+        .projects-column .header-primary {
+            flex-direction: row;
+        }
+
+        .projects-column .header-secondary {
+            flex-direction: row;
+        }
+
+        .section-headers {
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .foundations-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .foundation-item {
+            border-radius: 2rem !important;
+        }
+    }
+
+    .collage-item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    z-index: 2; /* Above the background overlays */
+}
 </style>
