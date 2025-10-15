@@ -13,10 +13,6 @@
     --color-terra: #975330; /* terracotta */
     --color-orange: #c57938; /* orange */
     --color-yellow: #ffad3b; /* sun-yellow */
-
-    --header-primary: 60px;
-    --header-secondary: 40px;
-    --header-tertiary: 28px;
 }
 
 html{
@@ -35,6 +31,31 @@ ul{
     padding: none;
 }
 
+h1{
+    font-size: clamp(1.8rem, calc(6vw + 1rem), 4.5rem);
+    font-weight: 700;
+}
+
+h2{
+    font-size: clamp(1rem, calc(4vw + 1rem), 2.5rem);
+    font-weight: 700;
+}
+
+input{
+    border: 1px solid var(--color-primary);
+    border-radius: 0.5vw;
+    padding: min(1vw, 10px);
+    font-size: clamp(1rem, calc(1vw + 0.25rem), 1.5rem);
+    height: min(20vw, 40px);
+    accent-color: var(--color-yellow);
+    caret-color: var(--color-wood);
+}
+
+.input-label{
+    font-size: 18px;
+    font-weight: 600;
+}
+
 .indent{
     margin-left: 10%;
 }
@@ -45,16 +66,6 @@ ul{
 
 .indent-l{
     margin-left: 13%;
-}
-
-.header-primary{
-    font-size: var(--header-primary);
-    font-weight: 700;
-}
-
-.header-secondary{
-    font-size: 40px;
-    font-weight: 700;
 }
 
 .header-tertiary{

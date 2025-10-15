@@ -1,292 +1,349 @@
 <script lang="ts">
 	import "../app.css";
 	let { children } = $props();
+
+	let menuOpen = $state(false);
+
+	function toggleMenu() {
+		menuOpen = !menuOpen;
+	}
+
+	function closeMenu() {
+		menuOpen = false;
+	}
 </script>
 
-<main class="nav-main">
-	<section class="navbar">
+<svelte:window on:resize={closeMenu} />
+
+<header class="nav-main">
+	<nav class="navbar">
 		<div class="n-left">
-			<div class="l-name"><a href="/">Luc Juneau</a></div>
+			<a href="/" class="logo-link">Luc Juneau</a>
 		</div>
+
+		<!-- Desktop Navigation -->
 		<div class="n-right">
 			<ul class="n-ul">
-				<!-- <li class="n-li"><a href="about">About</a></li> -->
-				<li class="n-li"><a href="/#work-and-projects">Projects</a></li>
-				<li class="n-li"><a href="/contact-me">Contact Me</a></li>
-				<li class="n-li-icon">
-					<a
-						href="https://linkedin/in/kxtnluc"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="linkedin"
-					>
-						<svg
-							class="icon-linkedin"
-							viewBox="0 0 20 20"
-							version="1.1"
-							xmlns="http://www.w3.org/2000/svg"
-							xmlns:xlink="http://www.w3.org/1999/xlink"
-							fill="#ffffff"
-							><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
-								id="SVGRepo_tracerCarrier"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							></g><g id="SVGRepo_iconCarrier">
-								<title>linkedin [#161]</title>
-								<desc>Created with Sketch.</desc> <defs> </defs>
-								<g
-									id="Page-1"
-									stroke="none"
-									stroke-width="1"
-									fill="none"
-									fill-rule="evenodd"
-								>
-									<g
-										id="Dribbble-Light-Preview"
-										transform="translate(-180.000000, -7479.000000)"
-										fill="#ffffff"
-									>
-										<g
-											id="icons"
-											transform="translate(56.000000, 160.000000)"
-										>
-											<path
-												d="M144,7339 L140,7339 L140,7332.001 C140,7330.081 139.153,7329.01 137.634,7329.01 C135.981,7329.01 135,7330.126 135,7332.001 L135,7339 L131,7339 L131,7326 L135,7326 L135,7327.462 C135,7327.462 136.255,7325.26 139.083,7325.26 C141.912,7325.26 144,7326.986 144,7330.558 L144,7339 L144,7339 Z M126.442,7323.921 C125.093,7323.921 124,7322.819 124,7321.46 C124,7320.102 125.093,7319 126.442,7319 C127.79,7319 128.883,7320.102 128.883,7321.46 C128.884,7322.819 127.79,7323.921 126.442,7323.921 L126.442,7323.921 Z M124,7339 L129,7339 L129,7326 L124,7326 L124,7339 Z"
-												id="linkedin-[#161]"
-											>
-											</path>
-										</g>
-									</g>
-								</g>
-							</g></svg
-						>
-					</a>
+				<li class="n-li">
+					<a href="/">About</a>
 				</li>
-				<li class="n-li-icon">
-					<a
-						href="https://linkedin/in/kxtnluc"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="github"
-					>
-						<svg
-							class="icon-github"
-							viewBox="0 0 15 15"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-							><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
-								id="SVGRepo_tracerCarrier"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							></g><g id="SVGRepo_iconCarrier">
-								<path
-									fill-rule="evenodd"
-									clip-rule="evenodd"
-									d="M7.49936 0.850006C3.82767 0.850006 0.849976 3.8273 0.849976 7.50023C0.849976 10.4379 2.75523 12.9306 5.39775 13.8104C5.73047 13.8712 5.85171 13.6658 5.85171 13.4895C5.85171 13.3315 5.846 12.9135 5.84273 12.3587C3.99301 12.7604 3.60273 11.4671 3.60273 11.4671C3.30022 10.6988 2.86423 10.4942 2.86423 10.4942C2.26044 10.0819 2.90995 10.0901 2.90995 10.0901C3.57742 10.137 3.9285 10.7755 3.9285 10.7755C4.52167 11.7916 5.48512 11.4981 5.86396 11.3279C5.92438 10.8984 6.09625 10.6053 6.28608 10.4391C4.80948 10.2709 3.25695 9.70063 3.25695 7.15241C3.25695 6.42615 3.51618 5.83298 3.94157 5.368C3.87299 5.1998 3.64478 4.52375 4.00689 3.60807C4.00689 3.60807 4.56494 3.42926 5.83538 4.28941C6.36568 4.14204 6.93477 4.06856 7.50018 4.0657C8.06518 4.06856 8.63386 4.14204 9.16498 4.28941C10.4346 3.42926 10.9918 3.60807 10.9918 3.60807C11.3548 4.52375 11.1266 5.1998 11.0584 5.368C11.4846 5.83298 11.7418 6.42615 11.7418 7.15241C11.7418 9.70716 10.1868 10.2693 8.70571 10.4338C8.94412 10.6392 9.15681 11.045 9.15681 11.6655C9.15681 12.5542 9.14865 13.2715 9.14865 13.4895C9.14865 13.6675 9.26867 13.8745 9.60588 13.8095C12.2464 12.9282 14.15 10.4375 14.15 7.50023C14.15 3.8273 11.1723 0.850006 7.49936 0.850006Z"
-									fill="#ffffff"
-								></path>
-							</g></svg
-						>
-					</a>
+				<li class="n-li">
+					<a href="/skills">Skills</a>
+				</li>
+				<li class="n-li">
+					<a href="/projects">Projects</a>
+				</li>
+				<li class="n-li">
+					<a href="/resume">Digital Resume</a>
+				</li>
+				<li class="n-li">
+					<a href="/contact-me" class="contact-btn">Contact Me</a>
 				</li>
 			</ul>
 		</div>
-	</section>
-</main>
+
+		<!-- Hamburger Menu Button -->
+		<button
+			class="hamburger"
+			onclick={toggleMenu}
+			aria-label="Toggle menu"
+			aria-expanded={menuOpen}
+		>
+			<span class="bar" hidden={menuOpen}></span>
+			<span class="bar" hidden={menuOpen}></span>
+			<span class="bar" hidden={menuOpen}></span>
+		</button>
+	</nav>
+
+	<!-- Mobile Sidebar -->
+	<div class="sidebar {menuOpen ? 'open' : ''}">
+		<button class="close-btn" onclick={closeMenu} aria-label="Close menu">
+			×
+		</button>
+		<ul class="sidebar-ul">
+			<li>
+				<a href="/" onclick={closeMenu}>About</a>
+			</li>
+			<li>
+				<a href="/skills" onclick={closeMenu}>Skills</a>
+			</li>
+			<li>
+				<a href="/projects" onclick={closeMenu}>Projects</a>
+			</li>
+			<li>
+				<a href="/" onclick={closeMenu}>Digital Resume</a>
+			</li>
+			<li>
+				<a href="/contact-me" onclick={closeMenu}>Contact Me</a>
+			</li>
+			<li class="social-links">
+				<a
+					href="https://linkedin.com/in/kxtnluc"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="LinkedIn"
+				>
+					<svg
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+							fill="currentColor"
+						/>
+					</svg>
+				</a>
+				<a
+					href="https://github.com/kxtnluc"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="GitHub"
+				>
+					<svg
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608.803.056 1.225.828 1.225.828.893 1.534 2.341 1.09 2.91.833.092-.647.35-1.09.636-1.34-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+							fill="currentColor"
+						/>
+					</svg>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<!-- Overlay -->
+	{#if menuOpen}
+		<div class="overlay" onclick={closeMenu}></div>
+	{/if}
+</header>
 
 {@render children()}
 
-<!-- <div class="footer">
-	<div class="f-body">
-		<div class="f-b-text">Thanks for checking out this site :D</div>
-	</div>
-</div> -->
-
 <style>
-	@media (max-width: 480px) {
-		.navbar {
-			display: flex;
-			flex-flow: row nowrap;
-			justify-content: space-between;
-			height: 5rem;
-			background-color: var(--color-primary);
+	/* Main Navigation */
+	.nav-main {
+		position: sticky;
+		top: 0;
+		z-index: 100;
+		background-color: var(--color-primary, #1a1a2e);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	}
 
-			.n-left {
-				align-self: center;
-				margin-left: 1rem;
-				.l-name {
-					width: 110px;
-					/* background-color: red; */
-					font-weight: 700;
-					font-size: 18px;
-				}
-			}
+	.navbar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+		height: 4rem;
+	}
 
-			.n-right {
-				align-self: center;
-				.n-ul {
-					margin-left: 1rem;
-					width: 90%;
-					letter-spacing: 2px;
-					display: flex;
-					flex-flow: row nowrap;
-					justify-content: center;
+	/* Logo */
+	.logo-link {
+		font-size: 1.5rem;
+		font-weight: 700;
+		text-decoration: none;
+		color: var(--color-contrast, #ffffff);
+		transition: opacity 0.2s;
+	}
 
-					.n-li {
-						font-size: 14px;
-						align-self: center;
-						transition: opacity 300ms ease;
-						position: relative;
-						/* background-color: red; */
-						width: 120px;
-					}
+	.logo-link:hover {
+		opacity: 0.8;
+	}
 
-					.n-li:hover {
-						opacity: 85%;
-						cursor: pointer;
-					}
-				}
-			}
+	/* Desktop Navigation */
+	.n-right {
+		display: flex;
+	}
+
+	.n-ul {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		gap: 2rem;
+		align-items: center;
+	}
+
+	.n-li a {
+		text-decoration: none;
+		color: var(--color-contrast, #ffffff);
+		font-weight: 500;
+		transition: opacity 0.2s;
+		padding: 0.5rem 0;
+	}
+
+	.n-li a:hover {
+		opacity: 0.7;
+	}
+
+	.contact-btn {
+		background-color: transparent;
+		border: 2px solid var(--color-contrast, #ffffff);
+		padding: 0.5rem 1.5rem !important;
+		border-radius: 6px;
+		transition: all 0.3s;
+	}
+
+	.contact-btn:hover {
+		background-color: var(--color-contrast, #ffffff);
+		color: var(--color-primary, #1a1a2e);
+		opacity: 1 !important;
+	}
+
+	/* Hamburger Button */
+	.hamburger {
+		display: none;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 28px;
+		height: 22px;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		z-index: 110;
+	}
+
+	.hamburger .bar {
+		height: 3px;
+		width: 100%;
+		background-color: var(--color-contrast, #ffffff);
+		border-radius: 2px;
+		transition: all 0.3s;
+	}
+
+	/* Sidebar */
+	.sidebar {
+		position: fixed;
+		top: 0;
+		right: -100%;
+		height: 100vh;
+		width: 280px;
+		background-color: var(--color-primary, #1a1a2e);
+		box-shadow: -4px 0 12px rgba(0, 0, 0, 0.3);
+		display: flex;
+		flex-direction: column;
+		padding: 5rem 2rem 2rem;
+		transition: right 0.3s ease;
+		z-index: 105;
+		overflow-y: auto;
+	}
+
+	.sidebar.open {
+		right: 0;
+	}
+
+	.close-btn {
+		position: absolute;
+		top: 1rem;
+		right: 1.5rem;
+		background: none;
+		border: none;
+		font-size: 2.5rem;
+		color: var(--color-contrast, #ffffff);
+		cursor: pointer;
+		line-height: 1;
+		padding: 0;
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.sidebar-ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.sidebar-ul li a {
+		text-decoration: none;
+		color: var(--color-contrast, #ffffff);
+		font-size: 1.25rem;
+		font-weight: 500;
+		display: block;
+		padding: 0.5rem 0;
+		transition: opacity 0.2s;
+	}
+
+	.sidebar-ul li a:hover {
+		opacity: 0.7;
+	}
+
+	.social-links {
+		display: flex;
+		gap: 1.5rem;
+		margin-top: 1rem;
+		padding-top: 2rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.2);
+	}
+
+	.social-links a {
+		color: var(--color-contrast, #ffffff);
+		transition: opacity 0.2s;
+		padding: 0.5rem !important;
+	}
+
+	.social-links a:hover {
+		opacity: 0.7;
+	}
+
+	/* Overlay */
+	.overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 100;
+		animation: fadeIn 0.3s;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
 		}
-
-		.n-li-icon {
-			display: none;
-			margin-left: 1rem;
-			margin-right: 1rem;
-			transition: 250ms;
-		}
-
-		.n-li-icon:hover {
-			opacity: 85%;
-			cursor: pointer;
-		}
-
-		.icon-linkedin {
-			width: 30px;
-			height: 30px;
-			display: inline-block; /* ensures it doesn't collapse */
-		}
-
-		.icon-github {
-			width: 35px;
-			height: 35px;
-			display: inline-block; /* ensures it doesn't collapse */
-		}
-
-		.footer {
-			background-color: var(--color-primary-darker);
-
-			.f-body {
-				display: flex;
-				justify-content: center;
-				height: 40rem;
-				.f-b-text {
-					align-self: center;
-				}
-			}
+		to {
+			opacity: 1;
 		}
 	}
 
-	@media (min-width: 480px) {
+	/* Mobile Responsive */
+	@media (max-width: 808px) {
 		.navbar {
+			padding: 1rem;
+		}
+
+		.hamburger {
 			display: flex;
-			flex-flow: row nowrap;
-			justify-content: space-between;
-			height: 5rem;
-			margin-left: 20%;
-			margin-right: 20%;
-			background-color: var(--color-primary);
-			border-bottom-left-radius: 5px;
-			border-bottom-right-radius: 5px;
-
-			.n-left {
-				align-self: center;
-				margin-left: 3rem;
-				.l-name {
-					font-weight: 700;
-					font-size: 32px;
-				}
-			}
-
-			.n-right {
-				align-self: center;
-				margin-right: 1.5rem;
-				margin-right: 1.5rem;
-				.n-ul {
-					letter-spacing: 3px;
-					display: flex;
-					flex-flow: row nowrap;
-					justify-content: space-between;
-
-					.n-li {
-						margin-left: 3rem;
-						margin-right: 3rem;
-						font-size: 24px;
-						transition: opacity 300ms ease;
-						position: relative;
-					}
-
-					.n-li::after {
-						content: "";
-						position: absolute;
-						left: 0;
-						bottom: -4px;
-						width: 0;
-						height: 3px;
-						background-image: linear-gradient(
-							to right,
-							var(--color-contrast-lighter),
-							white
-						);
-						transition: width 250ms ease-out;
-					}
-
-					.n-li:hover {
-						/* opacity: 85%; */
-						cursor: pointer;
-					}
-
-					.n-li:hover::after {
-						width: 100%;
-					}
-				}
-			}
 		}
 
-		.n-li-icon {
-			margin-left: 1rem;
-			margin-right: 1rem;
-			transition: 250ms;
+		.n-right {
+			display: none;
 		}
+	}
 
-		.n-li-icon:hover {
-			opacity: 85%;
-			cursor: pointer;
-		}
-
-		.icon-linkedin {
-			width: 30px;
-			height: 30px;
-			display: inline-block; /* ensures it doesn't collapse */
-		}
-
-		.icon-github {
-			width: 35px;
-			height: 35px;
-			display: inline-block; /* ensures it doesn't collapse */
-		}
-
-		.footer {
-			background-color: var(--color-primary-darker);
-
-			.f-body {
-				display: flex;
-				justify-content: center;
-				height: 40rem;
-				.f-b-text {
-					align-self: center;
-				}
-			}
+	@media (max-width: 480px) {
+		.sidebar {
+			width: 85vw;
+			max-width: 280px;
 		}
 	}
 </style>

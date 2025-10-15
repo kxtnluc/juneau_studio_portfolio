@@ -133,11 +133,6 @@
                     "name": "Stripe",
                     "start_date_of_skill": "01/01/2024",
                     "shorthand": "stripe"
-                },
-                {
-                    "name": "Plaid",
-                    "start_date_of_skill": "10/01/2024",
-                    "shorthand": "plaid"
                 }
             ],
             "projects": [
@@ -173,6 +168,32 @@
                     "isRepo": "false",
                     "changelog": {
                         "beta_versions": [
+                            {
+                                "version": "0.3.0",
+                                "release_date": "2025-8-14",
+                                "title": ".NET 9 Migration",
+                                "image_key": 0,
+                                "about": "",
+                                "log": [
+                                    "Migrated the entire project to .NET 9",
+                                    "Cleaned up codebase"
+                                ]
+                            },
+                            {
+                                "version": "0.2.3",
+                                "release_date": "2025-8-14",
+                                "title": "Rules",
+                                "image_key": 0,
+                                "about": "",
+                                "log": [
+                                    "Overhauled the Accounts page",
+                                    "Made Accounts page Editable and Dynamic",
+                                    "Made Categories page Editable and Dynamic",
+                                    "Added Category Rules",
+                                    "Added Auto-Assigning Categories to Transactions via Rules",
+                                    "Cleaned up Home page"
+                                ]
+                            },
                             {
                                 "version": "0.2.0",
                                 "release_date": "2025-03-10",
@@ -236,7 +257,7 @@
                     "link": "https://github.com/kxtnluc/juneau_studio_portfolio",
                     "icon": "resume",
                     "from": "7/25",
-                    "to": "8/25",
+                    "to": "present",
                     "starProject": false,
                     "status": "Published",
                     "isDemo": "false",
@@ -244,8 +265,24 @@
                     "changelog": {
                         "beta_versions": [
                             {
+                                "version": "1.1.0",
+                                "release_date": "2025-10-14",
+                                "title": "First Re-Style & Reboot",
+                                "image_key": 0,
+                                "about": "",
+                                "log": [
+                                    "Added more site Routes to accomodate the site's data better,",
+                                    "Restyled the Navbar,",
+                                    "Restyled the Contact Me Page,",
+                                    "Restyled the Projects Page,",
+                                    "Restyled the About Page,",
+                                    "Updated Server Side Dependencies",
+                                    "Rebooted the site from a previous outage"
+                                ]
+                            },
+                            {
                                 "version": "1.0.0",
-                                "release_date": "2026-03-10",
+                                "release_date": "2025-07-14",
                                 "title": "Publish",
                                 "image_key": 0,
                                 "about": "",
