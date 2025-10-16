@@ -366,6 +366,11 @@
             "item-2 item-3"
             "item-4 item-5";
         min-height: 300px;
+
+        @media (max-width: 384px) {
+            display: none;
+            
+        }
     }
 
     .collage-item {
