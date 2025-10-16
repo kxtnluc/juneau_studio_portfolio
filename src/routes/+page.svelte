@@ -140,7 +140,7 @@
                 {#each resume.work_experience as work}
                     <article class="work-item">
                         <div class="item-header">
-                            <div class="header-primary">
+                            <div class="head-pp">
                                 <div class="item-icon">
                                     <MiscIcons type={work.icon} size="l" />
                                 </div>
@@ -173,19 +173,19 @@
                 {#each resume.projects as project}
                     <article class="project-item">
                         <div class="item-header">
-                            <div class="header-primary">
-                                <h3 class:star={project.starProject}>
-                                    <a
-                                        href="/projects/{project.title.toLowerCase()}"
-                                        >{project.title}</a
-                                    >
-                                </h3>
+                            <div class="head-pp">
                                 <div
                                     class="item-icon"
                                     class:star={project.starProject}
                                 >
                                     <MiscIcons type={project.icon} size="l" />
                                 </div>
+                                <h3 class:star={project.starProject}>
+                                    <a
+                                        href="/projects/{project.title.toLowerCase()}"
+                                        >{project.title}</a
+                                    >
+                                </h3>
                             </div>
                             <div class="header-secondary">
                                 <span class="date-range"
@@ -255,7 +255,7 @@
         align-items: center;
         gap: 1.5rem;
         margin-bottom: 2rem;
-        font-size: var(--header-primary, 2rem);
+        font-size: var(--head-pp, 2rem);
         font-weight: 700;
     }
 
@@ -396,7 +396,7 @@
                 rgba(51, 51, 51, 1),
                 rgba(68, 68, 68, 0.6)
             ),
-            url("src/lib/resume-page.png");
+            url("$lib/resume-page.png");
     }
     .item-2 {
         grid-area: item-2;
@@ -406,7 +406,7 @@
                 rgba(51, 51, 51, 1),
                 rgba(68, 68, 68, 0.6)
             ),
-            url("src/lib/skills-page.png");
+            url("$lib/skills-page.png");
 
     }
     .item-3 {
@@ -417,7 +417,7 @@
                 rgba(51, 51, 51, 1),
                 rgba(68, 68, 68, 0.6)
             ),
-            url("src/lib/github-overlay.png");
+            url("$lib/github-overlay.png");
     }
     .item-4 {
         grid-area: item-4;
@@ -430,7 +430,7 @@
                 rgba(51, 51, 51, 1),
                 rgba(68, 68, 68, 0.6)
             ),
-            url("src/lib/contact-me-page.png");
+            url("$lib/contact-me-page.png");
     }
 
     .item-1,
@@ -446,35 +446,6 @@
         color: white;
         position: relative;
         cursor: pointer;
-    }
-
-    /* Skills Section */
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 1.5rem;
-        background-color: var(--color-primary-darker, #0f0f1e);
-        border-radius: 1.5rem;
-        padding: 2rem;
-        border: 4px solid rgba(0, 0, 0, 0.3);
-    }
-
-    .skill-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.75rem;
-        transition: opacity 0.3s;
-    }
-
-    .skill-item:hover {
-        opacity: 0.7;
-    }
-
-    .skill-name {
-        font-style: italic;
-        text-align: center;
-        font-size: 0.9rem;
     }
 
     /* Education Section */
@@ -583,7 +554,7 @@
         right: 0;
     }
 
-    .header-primary {
+    .head-pp {
         display: flex;
         align-items: center;
         gap: 1rem;
@@ -591,17 +562,27 @@
         margin-bottom: 0.5rem;
     }
 
-    .header-primary h3 {
+    .head-pp-right {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 1rem;
+        color: var(--color-orange, #ff6b35);
+        margin-bottom: 0.5rem;
+        flex-direction: row-reverse;
+    }
+
+    .head-pp h3 {
         font-size: var(--header-secondary, 1.5rem);
         margin: 0;
     }
 
-    .header-primary h3.star,
+    .head-pp h3.star,
     .item-icon.star {
         color: var(--color-yellow, #ffd700);
     }
 
-    .header-primary a {
+    .head-pp a {
         color: inherit;
         text-decoration: none;
         transition: background-color 0.3s;
@@ -609,7 +590,7 @@
         border-radius: 0.5rem;
     }
 
-    .header-primary a:hover {
+    .head-pp a:hover {
         background-color: var(--color-contrast, #fff);
     }
 
@@ -656,7 +637,7 @@
         justify-content: flex-end;
     }
 
-    .projects-column .header-primary {
+    .projects-column .head-pp {
         flex-direction: row-reverse;
     }
 
@@ -719,7 +700,7 @@
             justify-content: flex-start;
         }
 
-        .projects-column .header-primary {
+        .projects-column .head-pp {
             flex-direction: row;
         }
 
