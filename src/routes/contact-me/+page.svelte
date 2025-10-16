@@ -179,7 +179,7 @@
                     rgba(10, 102, 194, 1),
                     rgba(0, 191, 255, 0.6)
                 ),
-                /* your image underneath */ url("src/lib/linkedin-overlay.png");
+                /* your image underneath */ url("$lib/linkedin-overlay.png");
 
             background-size: cover;
             background-position: center;
@@ -197,7 +197,7 @@
                     rgba(51, 51, 51, 1),
                     rgba(68, 68, 68, 0.6)
                 ),
-                url("src/lib/github-overlay.png");
+                url("$lib/github-overlay.png");
 
             background-size: cover; /* Make image fill the box */
             background-position: center; /* Center the image */
