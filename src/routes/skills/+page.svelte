@@ -255,7 +255,6 @@
             transform 0.3s ease,
             box-shadow 0.3s ease,
             background-color 0.3s ease;
-        cursor: pointer;
     }
 
     .frontend-item:hover,
@@ -264,6 +263,5 @@
         box-shadow: 0 12px 24px var(--color-wood);
         background-color: var(--color-primary-darker);
 
-        cursor: pointer;
     }
 </style>
