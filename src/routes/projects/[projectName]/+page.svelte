@@ -116,28 +116,23 @@
 
 <style>
     .project-main {
-        max-width: 1400px;
+        max-width: 1600px;
         margin: 0 auto;
-        padding: 1rem;
     }
 
     /* Hero Section */
     .project-hero {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 2rem;
         background-color: var(--color-contrast, #fff);
         border-radius: 2rem;
         border: 6px solid var(--color-yellow, #ffd700);
         color: var(--color-primary, #1a1a2e);
-        padding: 2rem;
-        margin: 2rem 0;
     }
 
     .hero-content {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
     }
 
     .project-title {
@@ -321,7 +316,7 @@
         .project-hero {
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
-            border-radius: 3rem;
+            border-radius: 2rem;
         }
 
         .hero-content {
@@ -336,7 +331,7 @@
     /* Large Desktop */
     @media (min-width: 1400px) {
         .project-hero {
-            padding: 4rem;
+            padding: 2.5rem;
         }
     }
 

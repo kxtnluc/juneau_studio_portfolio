@@ -174,7 +174,6 @@
                                 "title": ".NET 9 Migration",
                                 "image_key": 0,
                                 "about": "",
-                                "imgPath": "linkedin-overlay.png",
                                 "log": [
                                     "Migrated the entire project to .NET 9",
                                     "Cleaned up codebase"
