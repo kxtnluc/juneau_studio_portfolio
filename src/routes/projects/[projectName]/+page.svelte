@@ -57,8 +57,14 @@
                 {p?.about_long}
             </p>
             <div class="project-actions">
-                <!-- <Button icon="playbtn" icon_placement="after">See a Demo</Button>
-                <Button icon="github" icon_placement="after">Repository</Button> -->
+                <!-- <Button icon="playbtn" icon_placement="after">See a Demo</Button> --->
+                <Button
+                    icon="github"
+                    icon_placement="after"
+                    size="l"
+                    onClick={() => window.open(p?.link, "_blank")}
+                    >Repository</Button
+                >
             </div>
         </div>
         <div class="hero-image">
@@ -242,11 +248,11 @@
         border: solid 5px var(--color-primary-darker);
         border-radius: 8px;
 
-        @media(max-width: 900px) {
+        @media (max-width: 900px) {
             max-width: 20rem;
         }
 
-        @media(max-width: 650px) {
+        @media (max-width: 650px) {
             display: none;
         }
     }
@@ -325,6 +331,15 @@
 
         .image-container {
             max-width: none;
+        }
+    }
+
+    /* Silly button */
+    @media (max-width: 1024px) {
+        .project-actions {
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
         }
     }
 

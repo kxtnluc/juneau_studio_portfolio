@@ -158,16 +158,27 @@
                         "Uses Blazor MAUI and SQLite for a compact fullstack development experience",
                         "Styled using custom made CSS Library"
                     ],
-                    "link": "https://github.com/kxtnluc/",
+                    "link": "https://github.com/kxtnluc/Hearth",
                     "icon": "hearth",
                     "from": "10/24",
                     "to": "present",
                     "starProject": true,
                     "status": "In Development",
                     "isDemo": "false",
-                    "isRepo": "false",
+                    "isRepo": "true",
                     "changelog": {
                         "beta_versions": [
+                            {
+                                "version": "0.3.1",
+                                "release_date": "2025-10-25",
+                                "title": "Repo Publicized & Dashboard Begginnings",
+                                "image_key": 0,
+                                "about": "",
+                                "log": [
+                                    "Began creating the Dashboard page",
+                                    "Binned the old repo, created a new one that is now public. Check it out via the link above!"
+                                ]
+                            },
                             {
                                 "version": "0.3.0",
                                 "release_date": "2025-8-14",
@@ -201,6 +212,7 @@
                                 "image_key": 0,
                                 "about": "",
                                 "log": [
+                                    "Started in VS 2022 and .NET 8 Runtime",
                                     "Added the 'Reports' page",
                                     "Created Functions to calculate [ mean, median, mode, s, and ∂ ]",
                                     "Componentized the Transaction List",
