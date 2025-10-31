@@ -4,6 +4,7 @@
     import hearth_pic from "$lib/hearth_snapshot.png";
     import js_pic from "$lib/juneaustudio_snapshot.png";
     import brand_pic from "$lib/brand.png";
+    import empire_pic from "$lib/jelly-fin-project.png";
     import details from "$lib/details.json";
     import Button from "../../../components/Button.svelte";
     import MiscIcons from "../../../components/icons/MiscIcons.svelte";
@@ -18,6 +19,8 @@
         picToUse = hearth_pic;
     } else if (data.projectName == "portfolio website") {
         picToUse = js_pic;
+    } else if (data.projectName == "empire nas") {
+        picToUse = empire_pic;
     } else {
         picToUse = brand_pic;
     }
@@ -58,13 +61,15 @@
             </p>
             <div class="project-actions">
                 <!-- <Button icon="playbtn" icon_placement="after">See a Demo</Button> --->
-                <Button
-                    icon="github"
-                    icon_placement="after"
-                    size="l"
-                    onClick={() => window.open(p?.link, "_blank")}
-                    >Repository</Button
-                >
+                 {#if p.link != ""}
+                    <Button
+                        icon="github"
+                        icon_placement="after"
+                        size="l"
+                        onClick={() => window.open(p?.link, "_blank")}
+                        >Repository</Button
+                    >
+                 {/if}
             </div>
         </div>
         <div class="hero-image">
