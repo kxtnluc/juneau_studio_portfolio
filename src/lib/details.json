@@ -249,6 +249,67 @@
                     }
                 },
                 {
+                    "title": "Empire NAS",
+                    "platform": "QANP NAS",
+                    "skills": [
+                        "ubuntu",
+                        "linux",
+                        "docker",
+                        "networking",
+                        "cloud"
+                    ],
+                    "tech": [
+                        "QNAP",
+                        "Jellyfin"
+                    ],
+                    "about": "My home-grown Cloud Storage solution using a QNAP Network Attached Storage device. (NAS)",
+                    "about_long": "Empire NAS is my network-attached storage solution built on QNAP hardware, designed to provide reliable and efficient data storage and media streaming capabilities. This project was a great learning experience in networking, server management, cloud storage solutions, linux, and data redundancy. The NAS hosts my personal dumped media library, including movies, TV shows, music, and documents, allowing me to access my files from any device on my home network.",
+                    "bullet_points": [
+                        "Running on a QNAP TS-464 Network Attached Storage Device",
+                        "Installed with an 8TB WD 3.5' HDD",
+                        "Runs docker containers for various services, like Jellyfin for media streaming"
+                    ],
+                    "link": "",
+                    "icon": "nas",
+                    "from": "10/25",
+                    "to": "present",
+                    "starProject": true,
+                    "status": "Upkeep",
+                    "isDemo": "false",
+                    "isRepo": "false",
+                    "changelog": {
+                        "beta_versions": [
+                            {
+                                "version": "1.1.0",
+                                "release_date": "2025-10-31",
+                                "title": "Jellyfin",
+                                "image_key": 0,
+                                "about": "",
+                                "log": [
+                                    "Started up a Jellyfin Docker Container for media streaming",
+                                    "Dumped DVDs and transcoded films via Handbrake",
+                                    "Transfered media files to NAS",
+                                    "Exposed NAS to local network"
+                                ]
+                            },
+                            {
+                                "version": "1.0.0",
+                                "release_date": "2025-10-25",
+                                "title": "Inital Setup",
+                                "image_key": 0,
+                                "about": "",
+                                "log": [
+                                    "Installed 3.5' 8TB HDD",
+                                    "Hooked up NAS to Home Network Switch",
+                                    "Booted NAS and ran through inital drive allocation and RAID setup",
+                                    "Set up user accounts and network shares"
+                                ]
+                            }
+                        ],
+                        "release_versions": []
+                    }
+                },
+                {
                     "title": "Portfolio Website",
                     "platform": "Svelte Front-End Website",
                     "skills": [
